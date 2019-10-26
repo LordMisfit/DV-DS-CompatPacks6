@@ -1,0 +1,60 @@
+type = "Doom Builder Map Settings Configuration";
+gameconfig = "GZDoom_DoomUDMF.cfg";
+strictpatches = 0;
+
+maps
+{
+	
+	E4M7
+	{
+		overrideceiltexture = false;
+		defaultceiltexture = "F_SKY1";
+		useresourcesinreadonlymode = false;
+		customfloorheight = 0;
+		overridemiddletexture = false;
+		overridebrightness = false;
+		overridebottomtexture = false;
+		
+		resources
+		{
+			
+			resource0
+			{
+				type = 1;
+				location = "C:\\Other Stuff\\GZDoom\\DV-DS-CompatPacks\\StrangeAeons";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+		}
+		viewscale = 1.505573f;
+		viewpositionx = -2604.502f;
+		overridefloorheight = false;
+		defaulttoptexture = "SNWROCK1";
+		customceilheight = 128;
+		defaultfloortexture = "F_0027";
+		viewpositiony = 1959.478f;
+		overridefloortexture = false;
+		overrideceilheight = false;
+		defaultwalltexture = "SNWROCK1";
+		overridetoptexture = false;
+		scriptcompiler = "zdoom_acs.cfg";
+		custombrightness = 196;
+		defaultbottomtexture = "SNWROCK1";
+		uselongtexturenames = false;
+		
+		grid
+		{
+			backsource = 0;
+			backscaley = 100;
+			backscalex = 100;
+			gridsize = 32f;
+			gridoriginx = 0f;
+			background = "";
+			backoffsetx = 0;
+			gridrotate = 0f;
+			gridoriginy = 0f;
+			backoffsety = 0;
+		}
+	}
+}
