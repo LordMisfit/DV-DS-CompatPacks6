@@ -10,7 +10,7 @@ DV-DS-CompatPacks ["Aetherius" - Compatiblity Patches for Various mapsets]
 	- Epic 2 (loaded as a WAD file)
 	- Hell Ground (loaded as a subfolder)
 	- Strange Aeons (loaded as a subfolder)
-	- Unloved [incomplete] (loaded as a subfolder)
+	- Unloved (loaded as a subfolder)
 
 
 HOW TO INSTALL / RUN / ETC:
