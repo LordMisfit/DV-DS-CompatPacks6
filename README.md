@@ -3,11 +3,6 @@ DV-DS-CompatPacks ["Aetherius" - Compatiblity Patches for Various mapsets]
 - Includes compatiability patches and PK3 files for the following wads/etc. Though keep in mind some of these are currently incomplete.
 	- Happy Time Circus [666] (loaded as a subfolder)
 	- Happy Time Circus 2 (loaded as a subfolder)
-	- "Doom Upstart Mapping Project: Episode 1" aka "DUMP" (loaded as a subfolder)
-	- "Doom Upstart Mapping Project: Episode 2" aka "DUMP-2" (loaded as a PK3 file)
-	- "Doom Upstart Mapping Project: Episode 3" aka "DUMP-3" (loaded as a subfolder)
-	- Epic (loaded as a WAD file)
-	- Epic 2 (loaded as a WAD file)
 	- Hell Ground (loaded as a subfolder)
 	- Strange Aeons (loaded as a subfolder)
 	- Unloved (loaded as a subfolder)
@@ -26,22 +21,10 @@ HOW TO INSTALL / RUN / ETC:
 
  - Running - 3. To run Happy Time Circus 2 w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-CompatPacks6/circus2" +hud_scale 0 exit" 
 
- - Running - 4. To run DUMP-1 w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-Compatpacks6/DUMP1" +hud_scale 0 exit"
- - Important: DUMP-1, DUMP-2's & DUMP-3's "remove everything on level start" feature is removed in these versions due to the mod's RPG nature, and resetting everything per level would destroy the mod's main function gameplay wise.
+ - Running - 4. To run Hell Ground w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-CompatPacks6/HellGround" +hud_scale 0 exit" 
 
- - Running - 5. To run DUMP-2 w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-Compatpacks6/DUMP2-dvds.pk3" +hud_scale 0 exit" 
- - Important: DUMP-1, DUMP-2's & DUMP-3's "remove everything on level start" feature is removed in these versions due to the mod's RPG nature, and resetting everything per level would destroy the mod's main function gameplay wise.
+ - Running - 5. To run Strange Aeons w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-CompatPacks6/StrangeAeons" +hud_scale 0 exit" 
 
- - Running - 6. To run DUMP-3 w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-Compatpacks6/DUMP3" +hud_scale 0 exit" 
- - Important: DUMP-1, DUMP-2's & DUMP-3's "remove everything on level start" feature is removed in these versions due to the mod's RPG nature, and resetting everything per level would destroy the mod's main function gameplay wise.
-
- - Running - 7. To run Epic [1] w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-Compatpacks6/Epic" +hud_scale 0 exit" 
-
- - Running - 8. To run Epic 2 w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-Compatpacks6/Epic2" +hud_scale 0 exit" 
-
- - Running - 9. To run Hell Ground w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-CompatPacks6/HellGround" +hud_scale 0 exit" 
-
- - Running - 10. To run Unloved w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-CompatPacks6/Unloved" +hud_scale 0 exit" 
+ - Running - 6. To run Unloved w/ "Aetherius" Command line: "start gzdoom.exe -iwad doom2.wad -file "DV-DS-ComboPack" "DV-DS-CompatPacks6/Unloved" +hud_scale 0 exit" 
 
  - ABOUT LegenDoomLite: Can be added to any mode [or game type or even normal Doom1/2] essentially by adding "DV-DS-CompatPacks/LegenDoomLite" into the command line as the last file loaded. This one does NOT have to be loaded as a seperate mod from the above and is basically compatible with any of them and thensome. :V
-
