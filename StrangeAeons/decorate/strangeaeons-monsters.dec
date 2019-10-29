@@ -781,17 +781,17 @@ actor SlimeWorm : AetheriusMonsterZSC 31994
 
 actor SlimeBall1 : DoomImpBall
 {
-		radius 4
-		height 4
-		speed 14
-		damage 4
-		seesound none
-		deathsound "slimeball/splat"
-		scale 0.5
-		-NOGRAVITY
-		Decal PlasmaScorchLower
-		states
-		{
+	radius 4
+	height 4
+	speed 14
+	damage 4
+	seesound none
+	deathsound "slimeball/splat"
+	scale 0.5
+	-NOGRAVITY
+	Decal PlasmaScorchLower
+	states
+	{
 		Spawn:
 			BOGY ABC 2 bright
 			loop
@@ -1919,17 +1919,6 @@ ACTOR BeamRevenant : DSRevenant 2112
 	//$Color 12
 	//$Category "Strange Aeons Monsters"
 	Tag "Beam Revenant"
-	Painchance 100
-	Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
-	Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 12
-	DamageFactor "Thunder", 1.25 // Revenants = +25% Thunder Damage
-	Painchance "Thunder", 125 // Revenants = +25% Pain Chance
-	DamageFactor "Fire", 1.33 // Revenants = +33% Fire Damage
-	Painchance "Fire", 133 // Revenants = +33% Pain Chance
-	DamageFactor "Holy", 2.25 // Undead = +125% Holy Damage
-	Painchance "Holy", 225 // Undead = +125% Pain Chance
 	seesound "beamrevenant/activate"
 	painsound "beamrevenant/pain"
 	deathsound "beamrevenant/death"
@@ -1941,10 +1930,13 @@ ACTOR BeamRevenant : DSRevenant 2112
 	States
 	{
 		Spawn:
+			RASK A 0 NoDelay 
 			RASK AB 10 A_Look
+			goto Spawn+1
 			Loop
 		See:
-			RASK AAABBBCCCDDDEEEFFF 2 
+			RASK A 0
+			RASK AABBCCDDEEFF 2 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
@@ -1952,6 +1944,7 @@ ACTOR BeamRevenant : DSRevenant 2112
 			}
 			Loop
 		Melee:
+			TNT1 A 0
 			RASK G 1 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(0); }
@@ -1980,20 +1973,16 @@ ACTOR BeamRevenant : DSRevenant 2112
 			}
 			Goto See
 		Missile:
-			RASK J 1 Bright 
+			RASK J 10 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(0); }
+				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
-			RASK J 9 Bright
-			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 135) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(8); }
-				A_FaceTarget;
-			}
-			RASK K 10 
+			RASK K 10 // A_SkelMissile 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
@@ -2029,6 +2018,15 @@ ACTOR BeamRevenant : DSRevenant 2112
 			RASK LLLL 5
 			Goto See
 
+		Pain.Plasma:
+			TNT1 A 0 A_Jump(192,"Pain")
+		Pain.Electric:
+		Pain.Lightning:
+		Pain.Thunder:
+			RASK L 5
+			RASK L 5 A_DVDSPain
+			RASK L 5
+			Goto See
 		Death:
 			TNT1 A 0 A_DVDSNormalDeath(-2,0,1)
 			RASK LM 7
