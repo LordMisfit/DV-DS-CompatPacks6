@@ -236,7 +236,6 @@ Actor AmmoSphere : PowerupGiver 21468
 	+COUNTITEM
 	+INVENTORY.AUTOACTIVATE
 	+INVENTORY.ALWAYSPICKUP
-	+INVENTORY.FANCYPICKUPSOUND
 	Inventory.PickupMessage "Infinite Ammo!"
 	Inventory.PickupSound "misc/p_pkup"
 	Powerup.Duration -30
@@ -383,7 +382,7 @@ Actor MutantRage : PowerupGiver
 //MUTANT SKIN
 Actor PowerMutantskin : PowerProtection
 {
-	DamageFactor "Normal", 0.25
+	DamageFactor "normal", 0.25
 }
 
 Actor MutantSkin : PowerupGiver
