@@ -2458,6 +2458,9 @@ actor UnlovedApprenticeNew : AetheriusMonsterZSC replaces ApprenticeofDsparil 30
 	Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor 0.8
+	RadiusDamageFactor 0.8
+	DamageFactor "Explosive", 0.8
+
 	DamageFactor "Magic", 0.8
 	DamageFactor "Crush", 6.4
 	MONSTER 
@@ -2799,6 +2802,9 @@ ACTOR AvatarNew : AetheriusMonsterZSC replaces Avatar 30125
 	Painchance "Kick", 25 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 15 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor 0.625
+	RadiusDamageFactor 0.625
+	DamageFactor "Explosive", 0.625
+
 	DamageFactor "Magic", 0.75
 	DamageFactor "Crush", 1
 	DamageFactor "Avatar", 0
@@ -3037,6 +3043,9 @@ ACTOR ThamuzNew : AetheriusMonsterZSC replaces Thamuz 7228
 	Painchance "Kick", 87 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 52 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor 0.375
+	RadiusDamageFactor 0.375
+	DamageFactor "Explosive", 0.375
+
 	DamageFactor "Crush", 0.5
 	MONSTER
 	+Boss
@@ -3243,6 +3252,7 @@ actor UnlovedDecoy replaces BossBrain
 	Health 32000
 	DamageFactor 0.0
 	RadiusDamageFactor 0.0
+	DamageFactor "Explosive", 0.0
 	Mass 10000000
 	+SOLID
 	States

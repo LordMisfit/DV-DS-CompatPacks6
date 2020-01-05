@@ -3859,7 +3859,11 @@ actor SuperBerthaNew : AetheriusMonsterZSC replaces SuperBertha 14768
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Magic", 192
+
 	DamageFactor 0.33
+	RadiusDamageFactor 0.33
+	DamageFactor "Explosive", 0.33
+
 	DamageFactor "Sceptre", 1
 	DamageFactor "Holy", 1.5
 	DamageFactor "Magic", 1.5
@@ -4218,7 +4222,11 @@ ACTOR BouncingClownNew : AetheriusMonsterZSC replaces BouncingClown 4822
 	DamageFactor "Melee", 1.25
 	DamageFactor "Stomp", 1.25
 	DamageFactor "Trample", 1.25
+
 	DamageFactor 0.125 // Most other damage doesn't work well [1/8th normal damage]
+	RadiusDamageFactor 0.125
+	DamageFactor "Explosive", 0.125
+
 	dropitem DoomSpellMana3 24
 	dropitem DoomSpellMana3 24
 	dropitem DoomSpellMana3 24
@@ -5246,13 +5254,16 @@ actor PennywiseBoss : AetheriusMonsterZSC replaces Pennywise 3672
 	PainChance "Sceptre", 256
 	PainChance "Holy", 256
 	PainChance "Deadlight", 256
+	DamageFactor 0.667
+	RadiusDamageFactor 0.667
+	DamageFactor "Explosive", 0.667
+
 	DamageFactor "Sceptre", 2
 	DamageFactor "Magic", 1.75
 	DamageFactor "Holy", 1.75
 	DamageFactor "Melee", 1.5
 	DamageFactor "Stomp", 1.5
 	DamageFactor "Trample", 1.5
-	DamageFactor 0.67
 	DamageFactor "Deadlight", 5.0
 	+FLOORCLIP +NORADIUSDMG +FULLVOLACTIVE +NOTARGET
 	+LOOKALLAROUND
