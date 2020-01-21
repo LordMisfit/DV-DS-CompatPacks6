@@ -5639,7 +5639,7 @@ ACTOR PopcornGunNew : Circus2Weapon replaces PopcornGun 30204
 			PPPG A -1 
 			loop
 		Ready: 
-			PGUN AAACCCDDDEEEFFFGGG 1 A_WeaponReady(WRF_ALLOWUSER1)
+			PGUN AAACCCDDDEEEFFFGGG 1 A_WeaponReady
 			loop
 		Deselect: 
 			PGUN A 1  
@@ -5773,9 +5773,9 @@ ACTOR GoreBalloonNew : Circus2Weapon replaces GoreBalloon 30030
 			loop
 		Ready: 
 			TNT1 A 0 A_JumpIf(CallACS("CheckCharacterClass") == 2, 6)
-			BLNN ABCD 6 A_WeaponReady(WRF_ALLOWUSER1) 
+			BLNN ABCD 6 A_WeaponReady 
 			TNT1 A 0 A_JumpIf(CallACS("CheckCharacterClass") != 2, 5)
-			BLNF ABCD 6 A_WeaponReady(WRF_ALLOWUSER1)
+			BLNF ABCD 6 A_WeaponReady
 			TNT1 A 0
 			loop
 			TNT1 A 0 A_JumpIf(CallACS("CheckCharacterClass") == 2, 4)
@@ -5987,7 +5987,7 @@ ACTOR ClownGrenadeNew : Circus2Weapon replaces ClownGrenade 30029
 			CGRD ABCDEFGHIJKL 3
 			loop
 		Ready: 
-			GHND ABCDEFFFFFEDCBAA 1 A_WeaponReady(WRF_ALLOWUSER1) 
+			GHND ABCDEFFFFFEDCBAA 1 A_WeaponReady 
 			loop
 		Deselect: 
 			GHND A 1
@@ -6145,7 +6145,7 @@ ACTOR GutFlingerNew : Circus2Weapon replaces GutFlinger 30028
 			CCCC F -1 
 			loop
 		Ready: 
-			CCCC A 1 A_WeaponReady(WRF_ALLOWUSER1) 
+			CCCC A 1 A_WeaponReady 
 			loop
 		Deselect: 
 			CCCC A 1 
@@ -6273,7 +6273,7 @@ ACTOR GasRocketLauncherNew : Circus2Weapon replaces GasRocketLauncher 30203
 			PRCK V -1 
 			loop
 		Ready: 
-			PRCK G 1 A_WeaponReady(WRF_ALLOWUSER1) 
+			PRCK G 1 A_WeaponReady 
 			loop
 		Deselect: 
 			PRCK G 1 
@@ -6403,7 +6403,7 @@ ACTOR CrazyBall2New : Circus2Weapon replaces CrazyBall2 30205
 			CRZY AAAAAA 8
 			loop
 		Ready: 
-			HCRZ S 1 A_WeaponReady(WRF_ALLOWUSER1) 
+			HCRZ S 1 A_WeaponReady 
 			loop
 		Deselect: 
 			HCRZ S 1 
