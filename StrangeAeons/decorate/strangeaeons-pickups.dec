@@ -770,7 +770,7 @@ Actor ScepterOfSouls : FloraWeapon 11111
 			SLSP K 2 Bright 
 			{
 				if (CallACS("MiscVarCheckDECORATE",10033) >= 3) { A_SetTics(1); }
-				A_SpreadAuraCustomPunch(A_GetPlayerAttackDamage(65,1), 1, 1, "SoulScepterPuff", 256);
+				A_SpreadAuraCustomPunch(A_GetPlayerAttackDamage(65,1), 1, 1, "SoulScepterPuff", A_GetSoulSceptreRange(128));
 			}
 			SLSP K 0 Bright 
 			{
