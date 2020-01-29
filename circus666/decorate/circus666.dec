@@ -37,12 +37,17 @@ actor RedBalloon replaces Balloon
 			BOON A 4 A_Chase
 			Loop
 		Pain: Goto See
-		Drop:
-			TNT1 A 0 A_DropItem("RuinousShield",1,1)
-			goto Death+2
 		Death:
 			BOON B 2 A_Scream
-			TNT1 A 0 A_Jump(192,"Drop")
+			TNT1 A 0
+			{
+				if (random(1,256) <= 192)
+				{
+					if (random(1,64) <= 1) { A_DropItem("RandomHellcoreWeapon",1,256); }
+					if (random(1,256) <= 1) { A_DropItem("RandomHellcoreWeapon",1,256); }
+					if (random(1,1024) <= 1) { A_DropItem("RuinousShield",1,256); }
+				}
+			}
 			BOON C 2 A_Fall
 			BOON D 2 A_CustomMissile("BSplatter", 40, 0, 0, 1)
 			TNT1 A 0 A_SpawnItemEx("BloodNonSolid", 0, 0, 0, random(-8,8), random(-8,8), random(-8,8))
