@@ -211,7 +211,7 @@ actor GreenBalloon replaces Balloon_Green 3116
 	DropItem DiarisLongBow 1
 	DropItem DiarisArrow 1
 	DropItem DiarisArrowQuiver 1
-	DropItem FloraRandomArmor 32
+	DropItem "FloraRandomArmor", 32
 	PainSound "pop1"
 	DeathSound "pop1"
 	States
@@ -301,7 +301,7 @@ actor BlueBalloon replaces Balloon_Blue 3193
 	DropItem DiarisArrowQuiver 8
 	DropItem DiarisLongBow 4
 	DropItem SauronHelmet 1
-	DropItem FloraRandomArmor 160
+	DropItem "FloraRandomArmor", 224
 
 	PainSound "pop1"
 	DeathSound "pop1"
@@ -501,8 +501,6 @@ ACTOR FluffyNew : AetheriusMonsterZSC replaces Fluffy2 32120
 	dropitem MaxHealthBonus 16
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States 
 	{
 		Spawn:
@@ -709,8 +707,6 @@ ACTOR MiniFluffyNew : AetheriusMonsterZSC replaces MiniFluffy 3194
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States 
 	{
 		Spawn:
@@ -810,8 +806,6 @@ ACTOR JumpingSkullNew : AetheriusMonsterZSC replaces JumpingSkull 32121
 	dropitem ArmorBonus 2
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -1082,8 +1076,6 @@ ACTOR JumpingSkull2New : AetheriusMonsterZSC replaces JumpingSkull2 3646 //spawn
 	dropitem ArmorBonus 2
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -1215,8 +1207,6 @@ ACTOR PossessedBalloonNew : AetheriusMonsterZSC replaces PossessedBalloon 3115
 	dropitem ArmorBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -1527,7 +1517,6 @@ ACTOR BingoNew : AetheriusMonsterZSC replaces Bingo 4110
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
 	var int user_flametimer;
 
 	States 
@@ -1768,8 +1757,6 @@ ACTOR TinyBingoNew : AetheriusMonsterZSC replaces TinyBingo 4179
 	dropitem ArmorBonus 4
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States 
 	{
 		Spawn:
@@ -2111,8 +2098,6 @@ actor BeefyNew : AetheriusMonsterZSC replaces Beefy 4333
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -2372,8 +2357,6 @@ ACTOR BlackBearNew : AetheriusMonsterZSC replaces BlackBear 3191
 	dropitem ArmorBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -2535,8 +2518,6 @@ actor ClownGhostNew : AetheriusMonsterZSC replaces ClownGhost 32128
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States 
 	{
 		Spawn:
@@ -2780,8 +2761,6 @@ actor ClownGhost2New : AetheriusMonsterZSC replaces ClownGhost2 31211
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States 
 	{
 		Spawn:
@@ -3141,8 +3120,6 @@ actor BulbyNew : AetheriusMonsterZSC replaces Bulby 3906
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States 
 	{
 		Spawn:
@@ -3345,8 +3322,6 @@ actor MegaBulbyNew : AetheriusMonsterZSC replaces MegaBulby 3989
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States 
 	{
 		Spawn:
@@ -3594,8 +3569,6 @@ ACTOR BigBertha2New : AetheriusMonsterZSC replaces BigBertha2 3192
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States 
 	{
 		Spawn:
@@ -3913,8 +3886,6 @@ actor SuperBerthaNew : AetheriusMonsterZSC replaces SuperBertha 14768
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -4117,8 +4088,6 @@ ACTOR EvilDeadHandNew : AetheriusMonsterZSC replaces EvilDeadHand 32212
 	dropitem ArmorBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -4283,8 +4252,6 @@ ACTOR BouncingClownNew : AetheriusMonsterZSC replaces BouncingClown 4822
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -4441,8 +4408,6 @@ ACTOR BabyClownNew : AetheriusMonsterZSC replaces BabyClown 4823
 	dropitem MaxHealthBonus 4
 	dropitem MaxHealthBonus 4
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -4574,8 +4539,6 @@ ACTOR BabyClown2New : AetheriusMonsterZSC replaces BabyClown2 4825
 	dropitem MaxHealthBonus 4
 	dropitem MaxHealthBonus 4
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -4729,8 +4692,6 @@ actor PennywiseHead2New : AetheriusMonsterZSC replaces PennywiseHead 14421
 	dropitem MaxHealthBonus 4
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States 
 	{
 		Spawn:
@@ -5333,8 +5294,6 @@ actor PennywiseBoss : AetheriusMonsterZSC replaces Pennywise 3672
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
 	dropitem RandomPowerupSpawner 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Pain.Charm: Goto See

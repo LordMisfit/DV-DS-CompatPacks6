@@ -195,7 +195,7 @@ actor GreenBalloon replaces BallGreen
 	DropItem DiarisLongBow 1
 	DropItem DiarisArrow 1
 	DropItem DiarisArrowQuiver 1
-	DropItem FloraRandomArmor 32
+	DropItem "FloraRandomArmor", 32
 	PainSound "pop1"
 	DeathSound "pop1"
 	States
@@ -281,7 +281,7 @@ actor BlueBalloon
 	DropItem DiarisArrowQuiver 8
 	DropItem DiarisLongBow 4
 	DropItem SauronHelmet 1
-	DropItem FloraRandomArmor 160
+	DropItem "FloraRandomArmor", 224
 
 	PainSound "pop1"
 	DeathSound "pop1"
@@ -364,8 +364,6 @@ ACTOR PennywiseHeadNew : AetheriusMonsterZSC replaces Pennywise 32119
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -470,8 +468,6 @@ ACTOR JumpingSkullNew : AetheriusMonsterZSC replaces JumpingSkull 3117
 	dropitem ArmorBonus 2
 	dropitem ArmorBonus 2
 	dropitem MaxHealthBonus 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -576,8 +572,6 @@ ACTOR PossessedBalloonNew : AetheriusMonsterZSC replaces PossessedBalloon 3115
 	dropitem ArmorBonus 1
 	dropitem ArmorBonus 1
 	dropitem MaxHealthBonus 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -714,8 +708,6 @@ ACTOR BigBerthaNew : AetheriusMonsterZSC replaces BigBertha 3225
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
-	dropitem FloraRandomArmor
-
 	States
 	{
 		Spawn:
@@ -1094,7 +1086,6 @@ ACTOR ClownHeadNew : AetheriusMonsterZSC replaces ClownHead 3206
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
 	dropitem MaxHealthBonus 1
-	dropitem FloraRandomArmor
 	var int user_flametimer;
 
 	States 
