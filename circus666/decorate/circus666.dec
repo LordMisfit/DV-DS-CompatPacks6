@@ -992,10 +992,10 @@ actor SpawnRck : AetheriusProjectileZSC
 			MISL ABC 4 Bright A_PlaySound("explode")
 			MISL BC 3 Bright A_PlaySound("explode")
 			MISL ABC 2 Bright A_PlaySound("explode")
-			MISL C 0  A_CustomMissile("PossessedBalloon", 64, 64, 60, 0)
-			MISL C 0  A_CustomMissile("PossessedBalloon", 32, -32, 0, 0)
-			MISL C 0  A_CustomMissile("PossessedBalloon", 32, 0, 0, 0)
-			MISL C 0  A_CustomMissile("JumpingSkull", 0, 0, 0, 0)
+			MISL C 0
+			{
+				A_SpawnRck(0);
+			}
 			Stop
 	}
 }
@@ -1028,15 +1028,10 @@ actor SpawnRckCrisis : SpawnRck
 			MISL ABC 4 Bright A_PlaySound("explode")
 			MISL BC 3 Bright A_PlaySound("explode")
 			MISL ABC 2 Bright A_PlaySound("explode")
-			MISL C 0  A_CustomMissile("PossessedBalloon", 64, 64, 60, 0)
-			MISL C 0  A_CustomMissile("PossessedBalloon", 0, 0, 60, 0)
-			MISL C 0  A_CustomMissile("PossessedBalloon", 32, -32, 0, 0)
-			MISL C 0  A_CustomMissile("PossessedBalloon", 32, 0, 0, 0)
-			MISL C 0  A_CustomMissile("PossessedBalloon", 0, -32, 0, 0)
-			MISL C 0  A_CustomMissile("PossessedBalloon", 0, 32, 0, 0)
-			MISL C 0  A_CustomMissile("JumpingSkull", 0, 0, 0, 0)
-			MISL C 0  A_CustomMissile("JumpingSkull", 32, 0, 0, 0)
-			MISL C 0  A_CustomMissile("JumpingSkull", 0, 32, 0, 0)
+			MISL C 0
+			{
+				A_SpawnRck(1);
+			}
 			Stop
 	}
 }
