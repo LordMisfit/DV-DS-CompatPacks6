@@ -1160,11 +1160,14 @@ ACTOR ChainsawZombieNew : AetheriusMonsterZSC replaces ChainsawZombie 32064
 		Spawn: 
 			CHAN A 0 NoDelay 
 			CHAN A 4 A_Look 
-			CHAN A 4 { A_PlayWeaponSound("weapons/sawidle"); A_Look; }
+			CHAN B 0 A_PlayWeaponSound("weapons/sawidle") 
 			CHAN A 4 A_Look 
-			CHAN B 4 { A_PlayWeaponSound("weapons/sawidle"); A_Look; } 
+			CHAN A 4 A_Look 
+			CHAN B 0 A_PlayWeaponSound("weapons/sawidle") 
 			CHAN B 4 A_Look 
-			CHAN B 4 { A_PlayWeaponSound("weapons/sawidle"); A_Look; }
+			CHAN B 4 A_Look 
+			CHAN B 0 A_PlayWeaponSound("weapons/sawidle") 
+			CHAN B 4 A_Look 
 			goto Spawn+1
 		See: 
 			CHAN A 0

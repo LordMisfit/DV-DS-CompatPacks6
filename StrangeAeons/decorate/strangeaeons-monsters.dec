@@ -550,12 +550,8 @@ ACTOR NightmareNew : AetheriusMonsterZSC 26000
 	States
 	{
 		Spawn:
-			NMRE A 0 NoDelay 
-			NMRE AABB 5 
-			{
-				A_NightmarePhaseOut;
-				A_Look;
-			}
+			NMRE A 0 NoDelay A_NightmarePhaseOut
+			NMRE AABB 5 A_Look
 			goto Spawn+1
 			Loop
 

@@ -166,26 +166,27 @@ class RoachBase : AetheriusMonsterZSC
 	override void Tick()
 	{
 		super.tick(); //Call original in case of another override
-	
-		String nm = "LDLegendaryMonsterTransformed";
-		LDLCheck = nm;
 
 		// Heal every six tics
+		int regendebug = dvdsdebug_actorregendisplays;
 		int healamt = 0;
 		int	healmax = User_MaxHP;
 		if (health > 0)
 		{
-			//Console.Printf("\cyHealTimer1: %d / %d\c-, \cxHealTimer2: %d / %d\c-", level.maptime % healint1, healint1, level.maptime % healint2, healint2);
+			if (regendebug) Console.Printf("\cyHealTimer1: %d / %d\c-, \cxHealTimer2: %d / %d\c-", level.maptime % healint1, healint1, level.maptime % healint2, healint2);
 			if (health < User_MaxHP && level.maptime % healint1 == 0) 
 			{
 				healamt += randompick(1,2,2,2,2,2,2,2,2,3) + (user_monsterlevel / randompick(20,15,15,15,15,15,15,15,15,10));
+				if (regendebug) Console.Printf("Roach Regen [first value < MaxHP]: %d, healint1: %d", healamt, healint1);
 			}
 			if (health >= User_MaxHP && level.maptime % healint2 == 0) 
 			{
 				healmax = User_MaxHP * 2;
 				healamt += randompick(0,0,1,1,1,1,2,2) + (user_monsterlevel / randompick(50,50,40,40,40,40,30,30));
+				if (regendebug) Console.Printf("Roach Regen [first value > MaxHP]: %d, healint2: %d", healamt, healint2);
 			}
-			if (CountInv(LDLCheck) && healamt > 0) healamt * (1.0 + (random(10,15) * 0.05));
+			if (user_legendaryevolved && healamt > 0) healamt * (1.0 + (random(10,15) * 0.05));
+			if (regendebug && healamt > 0) Console.Printf("Roach Regen [legendary]: %d", healamt);
 			
 			if (healamt > 0)
 			{
