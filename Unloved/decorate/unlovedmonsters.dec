@@ -27,6 +27,9 @@ actor MummyNew : AetheriusMonsterZSC replaces MummyDude 1337
 	ActiveSound "mummy/active"
 	HitObituary "%o was smashed by a golem."
 	DropItem "GoldWandAmmo", 84, 3
+	DropItem "DoomSpellMana", 90
+	DropItem "DoomSpellMana2", 30
+	DropItem "DoomSpellMana3", 10
 	
 	states
 	{
@@ -167,6 +170,9 @@ actor MummyLeaderNew : AetheriusMonsterZSC replaces MummyLeaderMan 1338
 	Obituary "$OB_MUMMYLEADER"
 	HitObituary "%o was smashed by a golem."
 	DropItem "GoldWandAmmo", 84, 3
+	DropItem "DoomSpellMana", 90
+	DropItem "DoomSpellMana2", 30
+	DropItem "DoomSpellMana3", 10
 	
 	states
 	{
@@ -1995,6 +2001,9 @@ ACTOR CultistNew : AetheriusMonsterZSC replaces Cultist 30119
 	DeathSound "monster/culdth" 
 	ActiveSound "monster/culact"
 	Obituary "%o was killed by a lowly Cultist."
+	dropitem "DoomSpellMana", 224
+	dropitem "DoomSpellMana2", 56
+
 	//DropItem Fire
 	States 
 	{
@@ -2135,6 +2144,10 @@ ACTOR UnlovedAcolyteNew : AetheriusMonsterZSC replaces AcolyteDude 30118
 	PainSound "monster/acopai" 
 	DeathSound "monster/acodth" 
 	ActiveSound "monster/acoact"
+	dropitem "DoomSpellMana", 128
+	dropitem "DoomSpellMana2", 64
+	dropitem "DoomSpellMana3", 32
+
 	States 
 	{
 		Spawn: 
@@ -2256,6 +2269,12 @@ ACTOR UnlovedDiscipleNew : AetheriusMonsterZSC replaces Disciple 30117
 	PainSound "monster/dispai" 
 	DeathSound "monster/disdth" 
 	ActiveSound "monster/disact"
+	dropitem "DoomSpellMana", 256
+	dropitem "DoomSpellMana", 64
+	dropitem "DoomSpellMana2", 128
+	dropitem "DoomSpellMana2", 32
+	dropitem "DoomSpellMana3", 64
+	dropitem "DoomSpellMana3", 16
 
 	States 
 	{
