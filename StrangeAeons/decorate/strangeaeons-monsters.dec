@@ -1079,7 +1079,7 @@ ACTOR GlaakiSpawn : AetheriusMonsterZSC 3118
 	Mass 4000
 	DamageFactor "Crush", 0
 	Monster
-	+FLOORCLIP +LOOKALLAROUND +NOTARGET +DONTTHRUST
+	+FLOORCLIP +LOOKALLAROUND +NOTARGET +DONTTHRUST +NOPAIN
 	SeeSound "slgmsee"
 	DeathSound "slgmdie"
 	Obituary "%o was eaten by the spawn of Glaaki."
@@ -1241,7 +1241,13 @@ ACTOR GlaakiSpawn : AetheriusMonsterZSC 3118
 				A_SetInventory("GlaakiBiteVulnerability",0);
 			}
 			Goto Walk
-
+			
+		Pain:
+		Pain.Fist:
+		Pain.Kick:
+		Pain.PoisonNeedle:
+			Goto See
+			
 		Death:
 			TNT1 A 0 A_DVDSNormalDeath(-2,0,1)
 			SLGM VWXY 5
@@ -4821,8 +4827,8 @@ actor Nyarlathotep : AetheriusMonsterZSC 7801
 	radius 20
 	height 80
 	meleeDamage 3
-	health 80000 // 4000
-	mass 100000
+	health 120000 // 4000
+	mass 150000
 	speed 30
 	painchance 100
 	Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
@@ -5032,8 +5038,8 @@ actor Nyarlathotep : AetheriusMonsterZSC 7801
 
 ACTOR NyarlathotepLesser : Nyarlathotep 7802
 {
-	health 8000 // 4000
-	mass 10000
+	health 12000 // 4000
+	mass 15000
 	speed 20
 	Alpha 0.8
 	RenderStyle "Add"

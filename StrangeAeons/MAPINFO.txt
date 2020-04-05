@@ -758,7 +758,7 @@ cluster 7
 	flat = "ENDBACK4"
 	music = "BGMINTRO"
         exittext = "As you smash and blast your magics through the beings",
-                   "of what you know have identified as Leng proper, you",
+                   "of what you now have identified as Leng proper, you",
                    "have been informed by Xenos and Empyrea that the dark",
                    "magicks of Nyarlathotep, 'The Crawling Chaos', and the",
                    "son of Azathoth, the 'The Whispering Darkness', is the",
@@ -787,7 +787,7 @@ cluster 8
         exittext = "Nyarlathotep's final moments are of horror at the",
                    "realization that he shouldn't have tried to trap",
                    "you in Leng. Perhaps he was trying to avenge Atlach",
-                   "-Nacha's demise, but he failed to realized you've",
+                   "-Nacha's demise, but he failed to realize you've",
                    "destroyed other eldritch beings in the past, incl-",
                    "uding the Eternals themselves, nor did he know of",
                    "your true heritage as half-Elohimiar.",

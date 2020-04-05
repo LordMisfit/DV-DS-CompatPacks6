@@ -296,7 +296,15 @@ class Devil : AetheriusMonsterZSC
 		height 56;
 		mass 120;
 		speed 10;
+		DamageFactor "Crush", 6.4;
+		DamageFactor "Fire", 0.5; // Imps = -50% Fire Damage
+		Painchance "Fire", 80; // Imps = -50% Pain Chance
+		DamageFactor "Holy", 1.5; // Imps = +50% Holy Damage
+		Painchance "Holy", 249; // Imps = +50% Pain Chance
 		painchance 160;
+		Painchance "Fist", 240; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Gauntlets", 240; // Fist attacks have a +50% chance of stunning an enemy
 		+DontHarmClass
 		seesound "monster/dvlsit";
 		painsound "monster/dvlpai";
