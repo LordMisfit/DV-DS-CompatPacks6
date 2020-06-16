@@ -90,10 +90,10 @@ ACTOR ImpalerXBow : FloraWeapon replaces Chainsaw
 				else if (CountInv("ImpalerBowZoom") == 3) { A_ZoomFactor(4.0); A_Print("4x Zoom"); }
 				else if (CountInv("ImpalerBowZoom") == 4) { A_ZoomFactor(1.0); A_SetInventory("ImpalerBowZoom",0); A_Print("No Zoom"); }
 
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10031,3);
+				A_DVDSRaise(0,10032,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -102,10 +102,10 @@ ACTOR ImpalerXBow : FloraWeapon replaces Chainsaw
 			{
 				A_ZoomFactor(1.0,ZOOM_INSTANT);
 
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10031,3);
+				A_DVDSLower(0,10032,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -353,10 +353,10 @@ ACTOR DualImpalerXBow : ImpalerXBow
 				else if (CountInv("ImpalerBowZoom") == 3) { A_ZoomFactor(4.0); A_Print("4x Zoom"); }
 				else if (CountInv("ImpalerBowZoom") == 4) { A_ZoomFactor(1.0); A_SetInventory("ImpalerBowZoom",0); A_Print("No Zoom"); }
 
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10031,3);
+				A_DVDSRaise(0,10032,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -365,10 +365,10 @@ ACTOR DualImpalerXBow : ImpalerXBow
 			{
 				A_ZoomFactor(1.0,ZOOM_INSTANT);
 
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10031,3);
+				A_DVDSLower(0,10032,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -621,7 +621,7 @@ ACTOR SonicNail : MageWandMissileNew
 			TNT1 A 0
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(63);
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
+				A_ScaleVelocity(1.00+((ArcheryMasteryPerkLevel*0.10)+(ArcheryMasteryEXPerkLevel*0.25)));
 			}
 			TNT1 A 0 A_ChangeFlag("NOPAIN",Random(1,FRandom(0.25,2.0)))//otherwise the ripping would make it very OP
 		SpawnLoop:
@@ -719,20 +719,20 @@ Actor ScepterOfSouls : FloraWeapon 11111
 			SLSP B 0 A_StopSoundEx("SoundSlot7")
 			SLSP B 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10033)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10034)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10033,3);
+				A_DVDSLower(0,10034,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			SLSP B 1
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10033)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10034)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10033,3);
+				A_DVDSRaise(0,10034,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -896,20 +896,20 @@ Actor DualScepterOfSouls : FloraWeapon 11112
 			SLS2 B 0 A_StopSoundEx("SoundSlot7")
 			SLS2 B 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10033)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10034)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10033,3);
+				A_DVDSLower(0,10034,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			SLS2 B 1
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10033)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10034)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10033,3);
+				A_DVDSRaise(0,10034,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop

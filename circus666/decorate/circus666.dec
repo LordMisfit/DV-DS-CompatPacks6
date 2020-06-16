@@ -908,7 +908,7 @@ actor RevRocketCrisis : RevRocket
 	Radius 8
 	Height 6
 	Speed 12
-	Damage ((2 * CallACS("CrisisMultiplier")) * random(1,8))
+	Damage ((2 * CrisisMultiplier) * random(1,8))
 	Scale .55
 	+SEEKERMISSILE
 	PROJECTILE
@@ -961,7 +961,7 @@ actor RevRocketCrisis : RevRocket
 			}
 			Loop
 		Death:
-			MISL ABC 4 Bright A_Explode((12 * CallACS("CrisisMultiplier")),96)
+			MISL ABC 4 Bright A_Explode((12 * CrisisMultiplier),96)
 			Stop
 	}
 }
@@ -1004,7 +1004,7 @@ actor SpawnRckCrisis : SpawnRck
 	Radius 8
 	Height 6
 	Speed 8
-	Damage ((4 * CallACS("CrisisMultiplier")) * random(1,8))
+	Damage ((4 * CrisisMultiplier) * random(1,8))
 	Scale .85
 	PROJECTILE
 	SeeSound "REVRCK"
@@ -1098,7 +1098,7 @@ ACTOR ClownHeadNew : AetheriusMonsterZSC replaces ClownHead 3206
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 				user_flametimer += 1;
-				if(user_flametimer == 2) 
+				if (user_flametimer == 2) 
 				{
 					A_CustomMissile("RFlame", -18, 0, 0, 1);
 					user_flametimer == 0;

@@ -111,7 +111,7 @@ ACTOR MummyFX1New : AetheriusProjectileZSC replaces MummyFX1
 }
 ACTOR MummyFX1Crisis : MummyFX1New
 {
-	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((4 * random(1,8)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -326,7 +326,7 @@ ACTOR VulgarShotNew : AetheriusEffectProjectile
 }
 ACTOR VulgarShotCrisis : VulgarShotNew
 {
-	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((4 * random(1,8)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -1299,7 +1299,7 @@ ACTOR BloodshotNew : AetheriusEffectProjectile replaces BloodShot
 }
 ACTOR BloodShotCrisis : BloodshotNew 
 {
-	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((2 * random(1,8)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
