@@ -23,7 +23,7 @@ actor MyBall2 : AetheriusEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE)
 				{
 					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 1 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 1 && user_canafflict)
 					{
 						user_random = random(1,13);
 						if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(105,175)); } // Silence for 3-5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
@@ -86,7 +86,7 @@ ACTOR Sparkles
 ACTOR Clownkey1 : Key 14419
 {
 	+ALWAYSPICKUP
-	Scale .25
+	Scale 0.25
 	Inventory.PickupMessage "You got a clown key!"
 	Inventory.PickupSound "misc/i_pkup"
 	Inventory.Icon PKEYA0
@@ -100,7 +100,7 @@ ACTOR Clownkey1 : Key 14419
 ACTOR Clownkey2 : Key 14420
 {
 	+ALWAYSPICKUP
-	Scale .25
+	Scale 0.25
 	Inventory.PickupMessage "You got a clown key!"
 	Inventory.PickupSound "misc/i_pkup"
 	Inventory.Icon PKEYB0
@@ -114,7 +114,7 @@ ACTOR Clownkey2 : Key 14420
 ACTOR Clownkey3 : Key 14422
 {
 	+ALWAYSPICKUP
-	Scale .25
+	Scale 0.25
 	Inventory.PickupMessage "You picked up a key."
 	Inventory.PickupSound "misc/i_pkup"
 	Inventory.Icon PKEYC0
@@ -128,7 +128,7 @@ ACTOR Clownkey3 : Key 14422
 ACTOR Clownkey4 : Key 14479
 {
 	+ALWAYSPICKUP
-	Scale .25
+	Scale 0.25
 	Inventory.PickupMessage "You picked up a key."
 	Inventory.PickupSound "misc/i_pkup"
 	Inventory.Icon PKEYC0
@@ -144,7 +144,7 @@ Clownkey11
 	DoomEdNum 10021
 	Sprite PKEY
 	Frames "10:A"
-	Scale .25
+	Scale 0.25
 	Radius 8
 	Height 8
 }
@@ -153,7 +153,7 @@ Clownkey22
 	DoomEdNum 10022
 	Sprite PKEY
 	Frames "10:B"
-	Scale .25
+	Scale 0.25
 	Radius 8
 	Height 8
 }
@@ -237,7 +237,7 @@ projectile Rain3
 	DeathFrames "A"
 	Radius 1
 	Height 2
-	scale .75 
+	Scale 0.75 
 	ALPHA 0.8
 	RenderStyle STYLE_Translucent
 	// RENDERSTYLE ADD
@@ -262,7 +262,7 @@ projectile  GreenDrop
 	DeathFrames "A"
 	Radius 1
 	Height 2
-	scale .5
+	Scale 0.5
 	//ALPHA 0.8
 	//RenderStyle STYLE_Translucent
 	Speed 0
@@ -830,7 +830,7 @@ actor RevTrail
     PROJECTILE
     RENDERSTYLE ADD
     +NOCLIP
-    Scale .5
+    Scale 0.5
     ALPHA 0.4
     States
     {
@@ -847,7 +847,7 @@ actor RFlame
 	PROJECTILE
 	RENDERSTYLE ADD
 	ALPHA 0.4
-	Scale .8
+	Scale 0.8
 	SeeSound ""
 	DeathSound ""
 	MissileHeight 0
@@ -1113,7 +1113,7 @@ actor Bulby //3906
 	PainChance 128
 	Mass 400
 	Meleedamage 1 
-	Scale .7
+	Scale 0.7
 	MONSTER
 	DropItem ClownSouls 30
 	+FLOORCLIP +FLOAT +NOTARGET //+NORADIUSDMG 
@@ -2625,7 +2625,7 @@ projectile TransformerSpark1
 	DeathFrames "A*"
 	Radius 1
 	Height 2
-	scale .3 
+	Scale 0.3 
 	//ALPHA 0.8
 	//RenderStyle STYLE_Translucent
 	Speed 0
@@ -2649,7 +2649,7 @@ actor Swirl
 	+NOLIFTDROP
 	+FLOAT
 	Speed 5
-	Scale .25
+	Scale 0.25
 	PROJECTILE
 	SeeSound ""
 	DeathSound ""
@@ -2709,7 +2709,7 @@ actor RetardDrink1 4000
 	Height 9
 	HEALTH 2
 	Mass 25
-	scale .85
+	Scale 0.85
 	+SHOOTABLE 
 	+HEXENBOUNCE
 	+NOBLOOD
@@ -2805,7 +2805,7 @@ actor TippedBottle1 4104
 	Height 9
 	HEALTH 2
 	Mass 25
-	scale .5
+	Scale 0.5
 	+SHOOTABLE 
 	+HEXENBOUNCE
 	+NOBLOOD
@@ -2838,7 +2838,7 @@ actor StandingBottle1 4105
 	Height 9
 	HEALTH 2
 	Mass 25
-	scale .5
+	Scale 0.5
 	+SHOOTABLE 
 	+HEXENBOUNCE
 	+NOBLOOD
@@ -2872,7 +2872,7 @@ actor StandingBottle2 4108
 	Height 9
 	HEALTH 2
 	Mass 25
-	scale .5
+	Scale 0.5
 	+SHOOTABLE 
 	+HEXENBOUNCE
 	+NOBLOOD
@@ -2906,7 +2906,7 @@ actor StandingBottle3 4109
 	Height 9
 	HEALTH 2
 	Mass 25
-	scale .5
+	Scale 0.5
 	+SHOOTABLE 
 	+HEXENBOUNCE
 	+NOBLOOD
@@ -2980,7 +2980,7 @@ actor PennywiseToy1 4106
 {
 	HEALTH 1
 	Mass 500000
-	Scale .3
+	Scale 0.3
 	Radius 8
 	Height 16
 	+SHOOTABLE
@@ -3305,7 +3305,7 @@ actor MyBall3 : AetheriusEffectProjectile
 			if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE)
 			{
 				A_StatusEffectChecker(4);
-				if (random(1,user_ailmentmaxchance) <= 1 && user_canafflict > 0)
+				if (random(1,user_ailmentmaxchance) <= 1 && user_canafflict)
 				{
 					user_random = random(1,12);
 					if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(105,175)); } // Silence for 3-5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
@@ -3344,7 +3344,7 @@ actor Orbit
 	+NOLIFTDROP
 	+FLOAT
 	Speed 5
-	Scale .25
+	Scale 0.25
 	PROJECTILE
 	SeeSound ""
 	DeathSound ""
@@ -4061,7 +4061,7 @@ actor TapeRecorder 29201
 	Height 9
 	HEALTH 8
 	Mass 25
-	scale .3
+	Scale 0.3
 	+SHOOTABLE +NOBLOOD 
 	DeathSound "BOTTLE2"
 	States
@@ -4376,7 +4376,7 @@ ACTOR ClownGrenade : Weapon //30029
 	Inventory.Pickupmessage "You picked up some clown grenades"
 	AttackSound "" 
 	+FloatBob 
-	Scale .3
+	Scale 0.3
 	States 
 	{
 		Spawn: 
@@ -4404,7 +4404,7 @@ actor CGrenade : AetheriusProjectileZSC
 	Height 16
 	Speed 25
 	Damage 2
-	Scale .5
+	Scale 0.5
 	+Missile +NOTELEPORT
 	SeeSound ""
 	DeathSound ""
@@ -4489,7 +4489,7 @@ ACTOR CGrenadeAmmo: Ammo 30215
 	//$Category "Happy Time Circus/Ammo"
 
 	+FloatBob 
-	Scale .5
+	Scale 0.5
 	Inventory.Amount 6
 	Inventory.MaxAmount 100
 	Ammo.BackpackAmount 2
@@ -4617,7 +4617,7 @@ ACTOR GoreBalloons : Ammo 30202
 	//$Color 19
 	//$Category "Happy Time Circus/Ammo"
 
-	Scale .2
+	Scale 0.2
 	Inventory.Amount 6
 	Inventory.MaxAmount 50
 	Ammo.BackpackAmount 6
@@ -4682,7 +4682,7 @@ actor RevRocket
 	Height 6
 	Speed 12
 	Damage (2 * random(1,8))
-	Scale .55
+	Scale 0.55
 	+SeeKERMISSILE
 	PROJECTILE
 	SeeSound "REVRCK"
@@ -5274,7 +5274,7 @@ actor CrazyBall
 	Height 16
 	Speed 25
 	Damage 2
-	Scale .6
+	Scale 0.6
 	+ACTIVATEIMPACT
 	+ACTIVATEPCROSS
 	//+NOBLOCKMAP
@@ -5498,7 +5498,7 @@ ACTOR CrazyBits1
 	Radius 5
 	Height 5
 	Speed 4
-	Scale .6
+	Scale 0.6
 	States
 	{
 		Spawn:
@@ -5744,7 +5744,7 @@ actor FlyingGut : AetheriusProjectileZSC
 	Height 6
 	Speed 13
 	Damage 5
-	Scale .8
+	Scale 0.8
 	+Missile
 	+Lowgravity
 	DropItem Blood
@@ -6379,7 +6379,7 @@ actor BalloonSoul
 	Height 6
 	Speed 25
 	Damage 2
-	Scale .75
+	Scale 0.75
 	RENDERSTYLE Translucent
 	ALPHA 0.30
 	Projectile
@@ -6647,7 +6647,7 @@ actor PopcornBag1 4830
 	Height 16
 	HEALTH 2
 	Mass 50000
-	scale .25
+	Scale 0.25
 	DropItem PopcornPiece 255
 	DropItem PopcornPiece 255
 	DropItem PopcornPiece 255
@@ -6706,7 +6706,7 @@ actor PopcornBag1 4830
 	Height 16
 	HEALTH 2
 	Mass 50000
-	scale .25
+	Scale 0.25
 	DropItem PopcornPiece 255
 	DropItem PopcornPiece 255
 	DropItem PopcornPiece 255

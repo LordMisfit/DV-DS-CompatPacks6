@@ -577,7 +577,7 @@ actor RevTrail
 	PROJECTILE
 	RENDERSTYLE ADD
 	+NOCLIP
-	Scale .5
+	Scale 0.5
 	ALPHA 0.4
 	States
 	{
@@ -594,7 +594,7 @@ actor RFlame
 	PROJECTILE
 	RENDERSTYLE ADD
 	ALPHA 0.4
-	Scale .8
+	Scale 0.8
 	SeeSound ""
 	DeathSound ""
 	MissileHeight 0
@@ -617,7 +617,7 @@ actor RetardDrink1 4000
 	Height 9
 	HEALTH 2
 	Mass 25
-	scale .85
+	Scale 0.85
 	+SHOOTABLE 
 	+HEXENBOUNCE
 

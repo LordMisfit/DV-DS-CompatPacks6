@@ -38,8 +38,8 @@ ACTOR RapidFireTrooper : AetheriusMonsterZSC 3201
 			}
 			RFTR AABBCCDD 3 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop 
@@ -52,10 +52,10 @@ ACTOR RapidFireTrooper : AetheriusMonsterZSC 3201
 				A_FaceTarget;
 				user_shotaccuracy = 22.5;
 				user_shotzaccuracy = 0.0;
-				if (user_charmed > 0) { user_shotaccuracy *= 0.667; user_shotzaccuracy *= 0.667; }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); user_shotaccuracy = user_shotaccuracy * 6 / 9; user_shotzaccuracy = user_shotzaccuracy * 6 / 9; }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); user_shotaccuracy = user_shotaccuracy * 7 / 9; user_shotzaccuracy = user_shotzaccuracy * 7 / 9; }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); user_shotaccuracy = user_shotaccuracy * 8 / 9; user_shotzaccuracy = user_shotzaccuracy * 8 / 9; }
+				if (user_charmed) { user_shotaccuracy *= 0.667; user_shotzaccuracy *= 0.667; }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); user_shotaccuracy = user_shotaccuracy * 6 / 9; user_shotzaccuracy = user_shotzaccuracy * 6 / 9; }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); user_shotaccuracy = user_shotaccuracy * 7 / 9; user_shotzaccuracy = user_shotzaccuracy * 7 / 9; }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); user_shotaccuracy = user_shotaccuracy * 8 / 9; user_shotzaccuracy = user_shotzaccuracy * 8 / 9; }
 				user_shotaccuracy1 = user_shotaccuracy * -0.5;
 				user_shotaccuracy2 = user_shotaccuracy * 0.5;
 				user_shotzaccuracy1 = user_shotzaccuracy * -0.5;
@@ -63,8 +63,8 @@ ACTOR RapidFireTrooper : AetheriusMonsterZSC 3201
 			}
 			RFTR F 5 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_PlaySound ("grunt/attack");
 
 				A_MonsterCrisisCheck; // Single Projectile/Tracer
@@ -79,8 +79,8 @@ ACTOR RapidFireTrooper : AetheriusMonsterZSC 3201
 			}
 			RFTR E 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 			}
 			TNT1 A 0 A_MonsterRefire(40,"See")
 			Goto Missile+2
@@ -174,8 +174,8 @@ actor UndeadHunter : AetheriusMonsterZSC 15489
 			}
 			DEHU AABBCCDD 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			loop
@@ -183,14 +183,14 @@ actor UndeadHunter : AetheriusMonsterZSC 15489
 		Missile:
 			DEHU E 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 			}
 			DEHU F 4 bright //A_SPosAttack
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 
 				A_PlaySound("shotguy/attack");
@@ -211,10 +211,10 @@ actor UndeadHunter : AetheriusMonsterZSC 15489
 			}
 			DEHU E 8
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
 			}
 			goto See
@@ -311,8 +311,8 @@ actor UndeadPriest : AetheriusMonsterZSC 15488
 			UNDP A 0 A_Jump (32, "Run")
 			UNDP AABBCCDD 3
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			loop
@@ -325,8 +325,8 @@ actor UndeadPriest : AetheriusMonsterZSC 15488
 			UNDP A 0 A_Jump (24, "See")
 			UNDP AABBCCDD 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			loop
@@ -334,19 +334,19 @@ actor UndeadPriest : AetheriusMonsterZSC 15488
 		Missile:
 			UNDP E 10 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
 			UNDP F 5 bright 
 			{
 				user_pelletsfired = 5;
 
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 
 				A_PlaySoundEx("UndeadPriest/Shoot","SoundSlot6");
 				A_MonsterCrisisCheck; // Multiple Tracers
@@ -364,24 +364,24 @@ actor UndeadPriest : AetheriusMonsterZSC 15488
 			}
 			UNDP E 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_SentinelRefire;
 			}
 			UNDP E 10 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
 			UNDP F 5 bright 
 			{
 				user_pelletsfired = 5;
 
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 
 				A_PlaySoundEx("UndeadPriest/Shoot2","SoundSlot7");
 				A_MonsterCrisisCheck; // Multiple Tracers
@@ -399,11 +399,11 @@ actor UndeadPriest : AetheriusMonsterZSC 15488
 			}
 			UNDP E 10 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
 			UNDP E 0 A_Jump (32, "Run")
@@ -560,7 +560,7 @@ ACTOR NightmareNew : AetheriusMonsterZSC 26000
 			NMRE A 0
 			NMRE AABBCCDD 3
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 				A_NightmarePhaseOut;
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
@@ -577,19 +577,19 @@ ACTOR NightmareNew : AetheriusMonsterZSC 26000
 			}
 			NMRE EF 9 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 135) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(8); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 135) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 45) { A_SetTics(8); }
 				A_NightmarePhaseIn;
 				A_FaceTarget;
 			}
 			NMRE G 9 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 135) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(8); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 135) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 45) { A_SetTics(8); }
 				A_NightmarePhaseIn;
 				A_FaceTarget;
 				
@@ -707,7 +707,7 @@ actor SlimeWorm : AetheriusMonsterZSC 31994
 		See:
 			WORM AABBCCDD 2 Fast
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			loop
@@ -715,16 +715,16 @@ actor SlimeWorm : AetheriusMonsterZSC 31994
 		Melee:
 			WORM EF 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
 			}
 			WORM G 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
 
 				A_MonsterCrisisCheck();
@@ -848,8 +848,8 @@ Actor DemonWizard : AetheriusMonsterZSC 31997
 			WDEM AAA 3 
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
@@ -858,22 +858,22 @@ Actor DemonWizard : AetheriusMonsterZSC 31997
 			WDEM B 4
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 			}
 			WDEM C 4 Bright 
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 			}
 			WDEM D 3 Bright 
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FaceTarget;
 
 				A_MonsterCrisisCheck;
@@ -883,15 +883,15 @@ Actor DemonWizard : AetheriusMonsterZSC 31997
 			WDEM D 3
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FaceTarget;
 			}
 			WDEM D 3 Bright 
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FaceTarget;
 
 				A_MonsterCrisisCheck;
@@ -901,15 +901,15 @@ Actor DemonWizard : AetheriusMonsterZSC 31997
 			WDEM D 3
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FaceTarget;
 			}
 			WDEM D 3 Bright 
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FaceTarget;
 
 				A_MonsterCrisisCheck;
@@ -919,8 +919,8 @@ Actor DemonWizard : AetheriusMonsterZSC 31997
 			WDEM D 3
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FaceTarget;
 			}
 			Goto See
@@ -1115,8 +1115,8 @@ ACTOR GlaakiSpawn : AetheriusMonsterZSC 3118
 			}
 			SLGM ABCDEFGHHHVWXY 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 			}
 			Loop
 		Walk:
@@ -1135,8 +1135,8 @@ ACTOR GlaakiSpawn : AetheriusMonsterZSC 3118
 			}
 			TNT1 AA 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 			}
@@ -1158,31 +1158,31 @@ ACTOR GlaakiSpawn : AetheriusMonsterZSC 3118
 			}
 			SLGM ABCDEFG 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 			}
 			SLGM HZ 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 270) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 			}
 			SLGM "\" 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 270) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 			}
 			SLGM ZH 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 270) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 			}
 			SLGM VWXY 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 			}
 			Goto Walk
 		Melee:
@@ -1201,41 +1201,41 @@ ACTOR GlaakiSpawn : AetheriusMonsterZSC 3118
 			}
 			SLGM IJK 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 				A_SetInventory("GlaakiPeekDefense",1);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 			}
 			SLGM LMN 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 				A_SetInventory("GlaakiPeekDefense",0);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 			}
 			SLGM O 6
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_CrisisMeleeAttack(20*random(1,8), "slgmbite", "slgmbite", Normal, 1);
 				A_SetInventory("GlaakiPeekDefense",0);
 				A_SetInventory("GlaakiBiteVulnerability",1);
 			}
 			SLGM NML 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 				A_SetInventory("GlaakiPeekDefense",0);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 			}
 			SLGM KJI 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 				A_SetInventory("GlaakiPeekDefense",1);
 				A_SetInventory("GlaakiBiteVulnerability",0);
@@ -1316,9 +1316,9 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 			TNT1 A 0 A_JumpIfHealthLower ((user_MaxHP/2), "Run") 
 			BDEM ABCDEF 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); A_ChangeFlag("AVOIDMELEE",1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); A_ChangeFlag("AVOIDMELEE",1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); A_ChangeFlag("AVOIDMELEE",1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); A_ChangeFlag("AVOIDMELEE",1); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); A_ChangeFlag("AVOIDMELEE",1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
@@ -1326,8 +1326,8 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 			TNT1 A 0 A_PlaySound("shadowbeast/sight")
 			BDEM AABBCCDDEEFFAABBCCDDEEFFAABBCCDDEEFF 2
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(1); }
 				A_DVDSChase("","",0,1,3,1,1);
 			}
 			TNT1 A 0 A_Jump(252, "Missile")
@@ -1341,16 +1341,16 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 			Attack1a:
 				BDEM H 6 
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-					else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-					else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+					if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+					else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+					else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 					A_FaceTarget;
 				}
 				BDEM I 6 
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-					else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-					else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+					if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+					else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+					else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 					A_FaceTarget;
 
 					A_MonsterCrisisCheck; // Multiple Projectiles
@@ -1362,14 +1362,14 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 			Attack1b:
 				BDEM H 4 
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-					else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+					if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+					else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 					A_FaceTarget;
 				}
 				BDEM I 4 
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-					else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+					if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+					else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 					A_FaceTarget;
 
 					A_MonsterCrisisCheck; // Single Projectile
@@ -1377,8 +1377,8 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 				}
 				BDEM I 4 
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-					else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+					if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+					else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 					A_FaceTarget;
 
 					A_MonsterCrisisCheck; // Single Projectile
@@ -1386,8 +1386,8 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 				}
 				BDEM I 4 
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-					else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+					if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+					else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 					A_FaceTarget;
 
 					A_MonsterCrisisCheck; // Single Projectile
@@ -1395,8 +1395,8 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 				}
 				BDEM I 4 
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-					else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+					if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+					else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 					A_FaceTarget;
 
 					A_MonsterCrisisCheck; // Single Projectile
@@ -1404,8 +1404,8 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 				}
 				BDEM I 4 
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-					else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+					if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+					else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 					A_FaceTarget;
 
 					A_MonsterCrisisCheck; // Single Projectile
@@ -1413,8 +1413,8 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 				}
 				BDEM I 4 
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-					else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+					if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+					else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 					A_FaceTarget;
 
 					A_MonsterCrisisCheck; // Single Projectile
@@ -1427,14 +1427,14 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 		Attack2a:
 			BDEM H 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
 			}
 			BDEM IIIIIIIIIIIII 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
 
 				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("ShadowBeastBallFire", "ShadowBeastBallFireCrisis", 56, 0, random(-8,8));
@@ -1443,21 +1443,21 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 		Attack2b:
 			BDEM H 16 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 157) { A_SetTics(9); }
-				else if (levelbehavior > 0 && user_monsterlevel > 135) { A_SetTics(10); }
-				else if (levelbehavior > 0 && user_monsterlevel > 112) { A_SetTics(11); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(12); }
-				else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(13); }
-				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(14); }
-				else if (levelbehavior > 0 && user_monsterlevel > 22) { A_SetTics(15); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 157) { A_SetTics(9); }
+				else if (levelbehavior && user_monsterlevel > 135) { A_SetTics(10); }
+				else if (levelbehavior && user_monsterlevel > 112) { A_SetTics(11); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(12); }
+				else if (levelbehavior && user_monsterlevel > 67) { A_SetTics(13); }
+				else if (levelbehavior && user_monsterlevel > 45) { A_SetTics(14); }
+				else if (levelbehavior && user_monsterlevel > 22) { A_SetTics(15); }
 				A_FaceTarget;
 			}
 			BDEM I 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
@@ -1554,13 +1554,13 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 			TNT1 A 0 A_Jump(60, 45)
 			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
 				A_DVDSWander(0,1,3,1,1);
 			}
 			BDEM ABCDEF 3 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FadeIn(0.1667,FTF_CLAMP);
 				if (random(1,6) == 1) { A_DVDSWander(0,1,3,1,1); } else { A_DVDSChase("","",0,1,3,1,1); }
 			}
@@ -1710,7 +1710,7 @@ ACTOR ShadowBeastBallFire : AetheriusEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(8);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,105)); // Poison for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -1743,7 +1743,7 @@ ACTOR ShadowBeastBallFireCrisis : ShadowBeastBallFire
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -1781,7 +1781,7 @@ ACTOR ShadowBeastBall1 : AetheriusEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(8);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,105)); // Poison for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -1808,7 +1808,7 @@ ACTOR ShadowBeastBall1Crisis : ShadowBeastBall1
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -1936,8 +1936,8 @@ ACTOR BeamRevenant : DSRevenant 2112
 			RASK A 0
 			RASK AABBCCDDEEFF 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
@@ -1945,59 +1945,59 @@ ACTOR BeamRevenant : DSRevenant 2112
 			TNT1 A 0
 			RASK G 1 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(0); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(0); }
 				A_FaceTarget;
 			}
 			RASK G 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_SkelWhoosh;
 			}
 			RASK H 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
 			}
 			RASK I 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_SkelFist;
 			}
 			Goto See
 		Missile:
 			RASK J 10 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
 			RASK K 10 // A_SkelMissile 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("Revrailshot", "RevrailshotCrisis", 60, 0, random(-2,2),0);
 			}
 			RASK K 10 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
 			Goto See
@@ -2175,9 +2175,9 @@ actor StarSpawn : AetheriusMonsterZSC replaces BaronofHell 11300
 		See:
 			CUTH ABCD 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); A_ChangeFlag("AVOIDMELEE",1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); A_ChangeFlag("AVOIDMELEE",1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); A_ChangeFlag("AVOIDMELEE",1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); A_ChangeFlag("AVOIDMELEE",1); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); A_ChangeFlag("AVOIDMELEE",1); }
 				A_VileChase;
 			}
 			loop
@@ -2185,27 +2185,27 @@ actor StarSpawn : AetheriusMonsterZSC replaces BaronofHell 11300
 		Melee:
 			CUTH E 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_PlaySound("deepone/meleegrowl");
 				A_FaceTarget;
 			}
 			CUTH F 6
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
 			}
 			CUTH G 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_CrisisMeleeAttack(random(1,10)*50,"none","none","Melee",true);
 			}
 			CUTH HI 2
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 			}
 			goto See
 
@@ -2214,18 +2214,18 @@ actor StarSpawn : AetheriusMonsterZSC replaces BaronofHell 11300
 			CUTH J 0 A_Jump(20, "Hide") 
 			CUTH J 8 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
 			}
 			CUTH K 8 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
 
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("DeepOneBall","DeepOneBallCrisis",96,32);
@@ -2273,17 +2273,17 @@ actor StarSpawn : AetheriusMonsterZSC replaces BaronofHell 11300
 			CUTH I 1 A_JumpIfInventory("squidinviso",1,"Unhide")
 			CUTH I 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_SetInventory("squidinviso",1);
 				A_PlaySound ("deepone/stealth");
 			}
 			CUTH I 10 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_ChangeFlag("STEALTH", 1);
 			}
 			goto See
@@ -2292,12 +2292,12 @@ actor StarSpawn : AetheriusMonsterZSC replaces BaronofHell 11300
 			CUTH D 0 A_SetInventory("squidinviso",0)
 			CUTH D 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_ChangeFlag("STEALTH", 0);
 			}
 			CUTH D 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_PlaySound("deepone/stealth");
 			}
 			goto See
@@ -2305,31 +2305,31 @@ actor StarSpawn : AetheriusMonsterZSC replaces BaronofHell 11300
 		Heal:
 			CUTH I 10 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 
 				A_DiabHealProj(-24.0,-40.0);
 			}
 			CUTH I 10 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 
 				A_VileHealProj(0.0,0.0);
 			}
 			CUTH I 10 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 
 				A_DiabHealProj(24.0,40.0);
 			}
@@ -2396,7 +2396,7 @@ actor DeepOneBall : AetheriusEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(8);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(140,280)); // Deceleratle for 4-8 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,280)); // Poison for 4-8 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
@@ -2450,7 +2450,7 @@ actor DeepOneBallCrisis : DeepOneBall
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(8);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(140,280)*CallACS("CrisisMultiplier",5)); // Deceleratle for 4-8 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,280)*CallACS("CrisisMultiplier",5)); // Poison for 4-8 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
@@ -2511,8 +2511,8 @@ actor VulgarNew : DSDoomImp 30127
 			VULG A 0
 			VULG AABBCCDD 3
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			loop
@@ -2522,23 +2522,23 @@ actor VulgarNew : DSDoomImp 30127
 			TNT1 A 0
 			VULG E 8 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
 			}
 			VULG F 8
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
 				A_PlaySound("monster/vulswg");
 			}
 			VULG G 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
 				
 				A_MonsterCrisisCheck; // Combo Attack
@@ -2615,7 +2615,7 @@ ACTOR VulgarShotNew : AetheriusEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -2644,7 +2644,7 @@ ACTOR VulgarShotCrisis : VulgarShotNew
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(140,210)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -2741,8 +2741,8 @@ Actor Fleshspawn : AetheriusMonsterZSC 10558
 			}
 			FLSP AABB 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 
 				A_FastChaseCalc(3,24);
 				if (random(1,256) <= user_fastchasechance) { A_DVDSChase("Melee","Missile",CHF_FASTCHASE,1,3,1,1); } else { A_DVDSChase("Melee","Missile",0,1,3,1,1); }
@@ -2756,22 +2756,22 @@ Actor Fleshspawn : AetheriusMonsterZSC 10558
 			FLSP C 0 A_Jump(96, 6)
 			FLSP C 8 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
 			}
 			FLSP D 4     
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 				A_FaceTarget;
 			}
 			FLSP E 4 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 
 				A_GiveInventory("100PercentDMGWeakness",1);
 				A_MonsterCrisisCheck; // SkullAttack
@@ -2787,9 +2787,9 @@ Actor Fleshspawn : AetheriusMonsterZSC 10558
 			}
 			FLSP FE 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_FaceTarget; }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 60) { A_FaceTarget; }
 	
 				A_MonsterCrisisCheck; // Adds a Single Melee Attack to the SkullAttack
 				if (user_canusecrisisatk == 1) { A_CustomMeleeAttack(random(1,8)*2,"none","none","Melee",true); }
@@ -2797,22 +2797,22 @@ Actor Fleshspawn : AetheriusMonsterZSC 10558
 			Goto Charge+4
 			FLSP C 8 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
 			}
 			FLSP D 4     
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 				A_FaceTarget;
 			}
 			FLSP E 4 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 
 				A_GiveInventory("100PercentDMGWeakness",1);
 				A_MonsterCrisisCheck; // SkullAttack
@@ -2828,30 +2828,30 @@ Actor Fleshspawn : AetheriusMonsterZSC 10558
 			}
 			FLSP FEFE 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_FaceTarget; }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 60) { A_FaceTarget; }
 	
 				A_MonsterCrisisCheck; // Adds a Single Melee Attack to the SkullAttack
 				if (user_canusecrisisatk == 1) { A_CustomMeleeAttack(random(1,8)*2,"none","none","Melee",true); }
 			}
 			FLSP C 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
 			}
 			FLSP D 4     
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 				A_FaceTarget;
 			}
 			FLSP E 4 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
 
 				A_GiveInventory("100PercentDMGWeakness",1);
 				A_MonsterCrisisCheck; // SkullAttack
@@ -2867,9 +2867,9 @@ Actor Fleshspawn : AetheriusMonsterZSC 10558
 			}
 			FLSP FE 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_FaceTarget; }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 60) { A_FaceTarget; }
 	
 				A_MonsterCrisisCheck; // Adds a Single Melee Attack to the SkullAttack
 				if (user_canusecrisisatk == 1) { A_CustomMeleeAttack(random(1,8)*2,"none","none","Melee",true); }
@@ -3184,8 +3184,8 @@ ACTOR Dhole : AetheriusMonsterZSC replaces Cyberdemon 9494
 			TNT1 A 0 Radius_Quake(4,8,0,16,0)
 			TNT1 AA 2
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 				A_SetInventory("DholeBiteVulnerability",0);
 			}
@@ -3208,43 +3208,43 @@ ACTOR Dhole : AetheriusMonsterZSC replaces Cyberdemon 9494
 			}
 			DHOL A 4 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				A_SetInventory("GlaakiPeekDefense",1);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 				A_Explode;
 			}
 			DHOL BCDE 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				A_SetInventory("GlaakiPeekDefense",1);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 			}
 			DHOL FGHIJ 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				A_SetInventory("GlaakiPeekDefense",0);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 			}
 			DHOL J 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				A_SetInventory("GlaakiPeekDefense",0);
 				A_SetInventory("GlaakiBiteVulnerability",1);
 			}
 			DHOL K 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
 				A_CrisisMeleeAttack(20*random(1,10), "dholbite", "dholbite", Normal, 1);
 				A_SetInventory("GlaakiPeekDefense",0);
 				A_SetInventory("GlaakiBiteVulnerability",1);
 			}
 			DHOL K 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
 
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 80, 0, -8, 0);
@@ -3254,7 +3254,7 @@ ACTOR Dhole : AetheriusMonsterZSC replaces Cyberdemon 9494
 			}
 			DHOL K 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
 
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 90, 0, 0, 0);
@@ -3264,7 +3264,7 @@ ACTOR Dhole : AetheriusMonsterZSC replaces Cyberdemon 9494
 			}
 			DHOL K 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
 
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 80, 0, 8, 0);
@@ -3274,29 +3274,29 @@ ACTOR Dhole : AetheriusMonsterZSC replaces Cyberdemon 9494
 			}
 			DHOL M 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				A_SetInventory("GlaakiPeekDefense",0);
 				A_SetInventory("GlaakiBiteVulnerability",1);
 			}
 			DHOL FED 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				A_SetInventory("GlaakiPeekDefense",0);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 			}
 			DHOL CB 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				A_SetInventory("GlaakiPeekDefense",1);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 			}
 			DHOL A 4 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				A_SetInventory("GlaakiPeekDefense",1);
 				A_SetInventory("GlaakiBiteVulnerability",0);
 				A_Explode;
@@ -3443,8 +3443,8 @@ Actor DShambler : AetheriusMonsterZSC 10077
 		See:
 			SHAM AAABBBCCCDDD 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 
 				chasetimer++;
 				if (chasetimer >= 12)
@@ -3492,7 +3492,7 @@ Actor DShambler : AetheriusMonsterZSC 10077
 			SHAM A 0 A_TakeInventory("WraithTeleporting", 1)
 			SHAM H 2
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_FaceTarget;
 			}
 			SHAM H 8 
@@ -3521,8 +3521,8 @@ Actor DShambler : AetheriusMonsterZSC 10077
 		Teleport:
 			SHAM A 3 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FaceTarget;
 			}
 			TNT1 A 0 A_GiveInventory("WraithTeleporting", 1)
@@ -3557,8 +3557,8 @@ Actor DShambler : AetheriusMonsterZSC 10077
 			SHAM A 0 A_TakeInventory("WraithTeleporting", 1)
 			SHAM A 3
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FaceTarget;
 			}
 			Goto See
@@ -3680,8 +3680,8 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 		See:
 			SPI2 ABCD 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 
 				chasetimer++;
@@ -3697,18 +3697,18 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 			SPI2 E 5 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_CrisisMeleeAttack(random(1,10)*12,"misc/gibbed","misc/gibbed","Melee",true);
 			}
 			SPI2 A 13 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(9); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(10); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(11); }
-				else if (levelbehavior > 0 && user_monsterlevel > 30) { A_SetTics(12); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 150) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(9); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(10); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(11); }
+				else if (levelbehavior && user_monsterlevel > 30) { A_SetTics(12); }
 				A_Facetarget;
 			}
 			goto see
@@ -3718,8 +3718,8 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 			MNTR V 0 A_Jump (32,18)
 			SPI2 U 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			TNT1 A 0 A_jumpifcloser(1024,15)
@@ -3742,104 +3742,104 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 			SPI2 A 1 
 			{
 				A_Playsound ("spider/land");
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(0); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(0); }
 				A_Stop;
 			}
 			goto see
 			SPI2 U 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			SPI2 X 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("FlameShot", "FlameShotCrisis", 54, 0, -8, 0);
 			}
 			SPI2 X 2
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("FlameShot", "FlameShotCrisis", 54, 0, 0, 0);
 			}
 			SPI2 X 2
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("FlameShot", "FlameShotCrisis", 54, 0, 8, 0);
 			}
 			SPI2 X 3 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_Facetarget;
 			}
 			SPI2 U 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			goto see
 			SPI2 E 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			SPI2 EEE 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			SPI2 E 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			goto see
 			SPI2 E 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			SPI2 U 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Playsound("spider2/sight");
 			}
 			SPI2 X 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_Facetarget;
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 54, 0, -8, 0);
 			}
 			SPI2 X 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_Facetarget;
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 54, 0, 0, 0);
 			}
 			SPI2 X 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_Facetarget;
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 54, 0, 8, 0);
 			}
 			SPI2 U 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			goto see
@@ -3850,9 +3850,9 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			goto see
@@ -3863,9 +3863,9 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				if (random(1,8) <= 1) { A_ThrowGrenade("LengSpiderling", 85, 10, 20); }
 			}
 			goto see
@@ -3876,9 +3876,9 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			goto see
@@ -3889,9 +3889,9 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			goto see
@@ -3904,9 +3904,9 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			goto See
@@ -4090,18 +4090,18 @@ ACTOR LengSpider : AetheriusMonsterZSC 19999
 			GAYS E 5 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_CrisisMeleeAttack(random(1,10)*6,"misc/gibbed","misc/gibbed","Melee",true);
 			}
 			GAYS E 13 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(9); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(10); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(11); }
-				else if (levelbehavior > 0 && user_monsterlevel > 30) { A_SetTics(12); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 150) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(9); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(10); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(11); }
+				else if (levelbehavior && user_monsterlevel > 30) { A_SetTics(12); }
 				A_Facetarget;
 			}
 			goto see
@@ -4193,8 +4193,8 @@ Actor SpiderGodling : SpiderGod 29998
 		See:
 			SPI2 ABCD 2
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			loop
@@ -4222,104 +4222,104 @@ Actor SpiderGodling : SpiderGod 29998
 			MNTR V 0 A_Jump (32,5)
 			SPI2 U 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			SPI2 X 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 16, 0, 0, 0);
 			}
 			SPI2 X 3 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_Facetarget;
 			}
 			SPI2 U 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			goto see
 			SPI2 E 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			SPI2 EEE 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			SPI2 E 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			goto see
 			SPI2 E 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			SPI2 U 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Playsound("spider2/sight");
 				A_Facetarget;
 			}
 			SPI2 X 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("HellRipper2", "HellRipper2Crisis", 56, 0, 0, 0);
 			}
 			SPI2 X 17 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 225) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(9); }
-				else if (levelbehavior > 0 && user_monsterlevel > 175) { A_SetTics(10); }
-				else if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(11); }
-				else if (levelbehavior > 0 && user_monsterlevel > 125) { A_SetTics(12); }
-				else if (levelbehavior > 0 && user_monsterlevel > 100) { A_SetTics(13); }
-				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(14); }
-				else if (levelbehavior > 0 && user_monsterlevel > 50) { A_SetTics(15); }
-				else if (levelbehavior > 0 && user_monsterlevel > 25) { A_SetTics(16); }
+				if (levelbehavior && user_monsterlevel > 225) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 200) { A_SetTics(9); }
+				else if (levelbehavior && user_monsterlevel > 175) { A_SetTics(10); }
+				else if (levelbehavior && user_monsterlevel > 150) { A_SetTics(11); }
+				else if (levelbehavior && user_monsterlevel > 125) { A_SetTics(12); }
+				else if (levelbehavior && user_monsterlevel > 100) { A_SetTics(13); }
+				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(14); }
+				else if (levelbehavior && user_monsterlevel > 50) { A_SetTics(15); }
+				else if (levelbehavior && user_monsterlevel > 25) { A_SetTics(16); }
 				A_Facetarget;
 			}
 			SPI2 X 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 16, 0, -8, 0);
 			}
 			SPI2 X 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 16, 0, 0, 0);
 			}
 			SPI2 X 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("GrellBall", "GrellBallCrisis", 16, 0, 8, 0);
 			}
 			SPI2 U 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_Facetarget;
 			}
 			goto see
@@ -4330,9 +4330,9 @@ Actor SpiderGodling : SpiderGod 29998
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			goto see
@@ -4343,9 +4343,9 @@ Actor SpiderGodling : SpiderGod 29998
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			goto see
@@ -4356,9 +4356,9 @@ Actor SpiderGodling : SpiderGod 29998
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			goto see
@@ -4370,9 +4370,9 @@ Actor SpiderGodling : SpiderGod 29998
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ThrowGrenade("LengSpiderling", 85, 10, 20);
 			}
 			goto See
@@ -4383,9 +4383,9 @@ Actor SpiderGodling : SpiderGod 29998
 			SPI2 EEE 6 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				if (random(1,8) <= 1) { A_ThrowGrenade("LengSpiderling", 85, 10, 20); }
 			}
 			goto see
@@ -4431,18 +4431,18 @@ Actor LengSpiderling : LengSpider 19998
 			GAYS E 5 
 			{
 				A_Facetarget;
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 				A_CrisisMeleeAttack(random(1,10)*3,"misc/gibbed","misc/gibbed","Melee",true);
 			}
 			GAYS E 13 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(9); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(10); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(11); }
-				else if (levelbehavior > 0 && user_monsterlevel > 30) { A_SetTics(12); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 150) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(9); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(10); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(11); }
+				else if (levelbehavior && user_monsterlevel > 30) { A_SetTics(12); }
 				A_Facetarget;
 			}
 			goto see
@@ -4497,7 +4497,7 @@ ACTOR StarVampire : AetheriusMonsterZSC 26001
 			VAMP AABBCCDD 3 Fast
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
-				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 
 				A_FastChaseCalc(4,16);
 				if (random(1,256) <= user_fastchasechance) { A_DVDSChase("Melee","Missile",CHF_FASTCHASE,1,3,1,1); A_FloatSetFChaseT(randompick(0,4)); } else { A_DVDSChase("Melee","Missile",0,1,3,1,1); }
@@ -4511,17 +4511,17 @@ ACTOR StarVampire : AetheriusMonsterZSC 26001
 			}
 			VAMP EF 9 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 135) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(8); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 135) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 45) { A_SetTics(8); }
 				A_FaceTarget;
 			}
 			VAMP G 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_CrisisMeleeAttack(4*random(1,10),"starvamp/melee","none");
 			}
 			Goto See
@@ -4602,7 +4602,7 @@ actor Skeleton : AetheriusMonsterZSC 31995
 		See:
 			SKLT AABBCCDDEEFF 2 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				if (random(1,256) <= 3) { A_PlaySound("boner/rattle",CHAN_5); }
 				if (random(1,256) <= 6) { A_PlaySound("boner/rattle",CHAN_6); }
 				if (random(1,256) <= 12) { A_PlaySound("boner/rattle",CHAN_7); }
@@ -4613,27 +4613,27 @@ actor Skeleton : AetheriusMonsterZSC 31995
 		Melee:
 			SKLT GH 4 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 			}
 			SKLT I 4 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 				A_playsound("skelatt",chan_auto);
 			}
 			SKLT J 4 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_CrisisMeleeAttack(random(1,6)*4,"swordhit","none");
 			}
 			SKLT K 4
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_FaceTarget;
 			}
 			goto See
@@ -4752,7 +4752,7 @@ actor PurpleTentacle : AetheriusMonsterZSC 31893
 		See:
 			TENT AABBCCDD 2 Fast
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 60) { A_SetTics(1); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			loop
@@ -4760,18 +4760,18 @@ actor PurpleTentacle : AetheriusMonsterZSC 31893
 		Melee:
 			TENT FG 6
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 30) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 30) { A_SetTics(5); }
 				A_FaceTarget;
 			}
 			TENT H 6 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 30) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 30) { A_SetTics(5); }
 				A_FaceTarget;
 
 				A_MonsterCrisisCheck();
@@ -4877,11 +4877,11 @@ actor Nyarlathotep : AetheriusMonsterZSC 7801
 		Wraiths:
 			LMWZ EFG 10 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
 			TNT1 AAAAA 0 
@@ -4891,30 +4891,30 @@ actor Nyarlathotep : AetheriusMonsterZSC 7801
 			}
 			LMWZ G 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 270) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 			}
 			LMWZ E 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 270) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 			}
 			LMWZ E 1 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(0); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(0); }
 				A_PlaySound("wizard/tele");
 			}
 			Goto See
 		FloorShot:
 			LMWZ F 10 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
 			LMWZ G 0 
@@ -4924,76 +4924,76 @@ actor Nyarlathotep : AetheriusMonsterZSC 7801
 			}
 			LMWZ GGG 10 bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
 			LMWZ E 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 270) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 			}
 			LMWZ E 1 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(0); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(0); }
 				A_PlaySound("wizard/tele");
 			}
 			goto See
 		Magic:
 			LMWZ E 10 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
 				A_FaceTarget;
 			}
 			LMWZ E 4 bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("MagicBlast", "MagicBlastCrisis", 90, 30, 0);
 				A_FaceTarget;
 			}
 			LMWZ E 4 bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("MagicBlast", "MagicBlastCrisis", 90, -30, 0);
 				A_FaceTarget;
 			}
 			LMWZ E 4 bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("MagicBlast", "MagicBlastCrisis", 55, -30, 0);
 				A_FaceTarget;
 			}
 			LMWZ E 4 bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("MagicBlast", "MagicBlastCrisis", 55, 30, 0);
 				A_FaceTarget;
 			}
 			LMWZ E 5 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 270) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 90) { A_SetTics(4); }
 			}
 			LMWZ E 1 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(0); }
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(0); }
 				A_PlaySound("wizard/tele");
 			}
 			goto See
@@ -5291,8 +5291,8 @@ ACTOR Spiderbaby : DSRailArachnotron replaces DSRailArachnotron
 			RSPI AABBCCDDEEFF 3
 			{
 				user_walksound++;
-				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 				if (user_walksound == 1) { A_BabyMetal; } else { A_DVDSChase("Melee","Missile",0,1,3,1,1); }
 				if (user_walksound >= 6) { user_walksound = 0; }
 			}
