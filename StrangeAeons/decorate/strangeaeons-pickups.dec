@@ -74,7 +74,7 @@ ACTOR ImpalerXBow : FloraWeapon replaces Chainsaw
 		Spawn:
 			CBOW Z 0
 			{
-				if (CountInv("ImpalerXBow"))
+				if (CountInv("ImpalerXBow",AAPTR_PLAYER1))
 				{
 					A_SpawnItemEx("DualImpalerXBow");
 					A_FadeOut(1,1);
@@ -336,7 +336,7 @@ ACTOR DualImpalerXBow : ImpalerXBow
 		Spawn:
 			CBOW Z 0
 			{
-				if (CountInv("DualImpalerXBow"))
+				if (CountInv("DualImpalerXBow",AAPTR_PLAYER1))
 				{
 					A_SpawnItemEx("DoomSpellMana2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0,tid);
 					A_SpawnItemEx("DoomSpellMana2",frandom(-1.0,1.0),frandom(-1.0,1.0),frandom(-1.0,1.0),frandom(-1.0,1.0),frandom(-1.0,1.0),frandom(-1.0,1.0),0,SXF_NOCHECKPOSITION,206);
@@ -701,7 +701,7 @@ Actor ScepterOfSouls : FloraWeapon 11111
 		Spawn:
 			SLSP A 1
 			{
-				if (CountInv("ScepterOfSouls"))
+				if (CountInv("ScepterOfSouls",AAPTR_PLAYER1))
 				{
 					A_SpawnItemEx("DualScepterOfSouls");
 					A_FadeOut(1,1);
@@ -878,7 +878,7 @@ Actor DualScepterOfSouls : FloraWeapon 11112
 		Spawn:
 			SLSP A 1
 			{
-				if (CountInv("DualScepterOfSouls"))
+				if (CountInv("DualScepterOfSouls",AAPTR_PLAYER1))
 				{
 					A_SpawnItemEx("YithGunReplacer");
 					A_FadeOut(1,1);
