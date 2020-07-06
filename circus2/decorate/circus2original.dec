@@ -4422,12 +4422,12 @@ actor CGrenade : AetheriusProjectileZSC
 			CGRD NNNNNNNNNN 3
 			PBFF A 0 A_Explode
 			PBFF A 0 A_PlaySound("BULBEXP") 
-			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark", 2, 0, random(-180, 180), 2, random(0, 180))
-			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark", 2, 0, random(-180, 180), 2, random(0, 180))
+			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
+			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
 			GHFF A 1
-			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark", 2, 0, random(-180, 180), 2, random(0, 180))        
-			GHFF AAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark2", 2, 0, random(-180, 180), 2, random(0, 180))
-			GHFF BC 4 A_CustomMissile("GrenadeSpark", 2, 0, random(-180, 180), 2, random(0, 180))
+			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))        
+			GHFF AAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark2", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
+			GHFF BC 4 A_CustomMissile("GrenadeSpark", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
 			GHFF DDDDEEEE 1 
 			GHFF FFFFGGGG 1 
 			GHFF HI 4 
@@ -4435,7 +4435,45 @@ actor CGrenade : AetheriusProjectileZSC
 			Stop
 	}
 }
-Actor GrenadeSpark
+actor CGrenadeNoHurt : AetheriusProjectileZSC
+{
+	Radius 8
+	Height 16
+	Speed 25
+	Damage 2
+	Scale 0.5
+	+Missile +NOTELEPORT
+	SeeSound ""
+	DeathSound ""
+	ExplosionRadius 256
+	ExplosionDamage 128
+	States
+	{
+		Spawn:
+			CGRD ABCDEFGHIJKL 3 A_CustomMissile("cloud", 4, 0, 0, 1)  
+			Goto Spawn 
+		Death: 
+			CGRD M 0 A_Jump (128,12)
+			CGRD MMMMMMMMMM 3
+			CGRD M 0 A_Jump (255,11)
+			CGRD NNNNNNNNNN 3
+			PBFF A 0 A_Explode(128,256,0)
+			PBFF A 0 A_PlaySound("BULBEXP") 
+			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSparkNoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
+			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSparkNoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
+			GHFF A 1
+			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSparkNoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))    
+			GHFF AAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark2NoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
+			GHFF BC 4 A_CustomMissile("GrenadeSparkNoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
+			GHFF DDDDEEEE 1 
+			GHFF FFFFGGGG 1 
+			GHFF HI 4 
+			GHFF J 4 
+			Stop
+	}
+}
+
+Actor GrenadeSpark : AetheriusProjectileZSC
 {
 	Radius 2
 	Height 2
@@ -4459,7 +4497,7 @@ Actor GrenadeSpark
 			Stop
 	}
 }
-Actor GrenadeSpark2
+Actor GrenadeSpark2 : AetheriusProjectileZSC
 {
 	Radius 2
 	Height 2
@@ -4482,6 +4520,53 @@ Actor GrenadeSpark2
 			Stop
 	}
 }
+Actor GrenadeSparkNoHurt : AetheriusProjectileZSC
+{
+	Radius 2
+	Height 2
+	Speed 17
+	+Missile +NOTELEPORT
+	scale 1
+	damage 8
+	SeeSound ""
+	DeathSound ""
+	States
+	{
+		Spawn:
+			CRZY R 1 Bright 
+			Goto Spawn
+		Death:
+			PWT2 G 3 Bright 
+			PWT2 H 3 Bright 
+			PWT2 IIIIIIIII 3 Bright 
+			PWH4 JJJJJJJJJKKKKKKKKKLLLLLLLLLLLLL 3 Bright 
+			Stop
+	}
+}
+
+Actor GrenadeSpark2NoHurt : AetheriusProjectileZSC
+{
+	Radius 2
+	Height 2
+	Speed 17
+	+Missile +NOTELEPORT
+	scale 1.5
+	damage 25
+	SeeSound ""
+	DeathSound ""
+	States
+	{
+		Spawn:
+			CRZY PQR 1 Bright
+			Goto Spawn
+		Death:
+			PWT2 G 3 Bright 
+			PWT2 H 3 Bright 
+			PWT2 I 3 Bright 
+			Stop
+	}
+}
+
 ACTOR CGrenadeAmmo: Ammo 30215
 {
 	//$NotAngled
@@ -4549,66 +4634,6 @@ ACTOR GoreBalloon : Weapon //30030
 			BLNN IH 6
 			BLNN A 0 
 			Goto Select
-	}
-}
-actor GoreBalloon666 : AetheriusProjectileZSC
-{
-	Radius 8
-	Height 6
-	Speed 13
-	Damage 6
-	scale 1
-	+SeeKERMISSILE +FloatBob 
-	PROJECTILE
-	ALPHA 0.8
-	SeeSound ""
-	DeathSound "pop1"
-	States
-	{
-		Spawn:
-			BOON A 4 A_SeekerMissile (30,40)
-			BOON A 4 A_CustomMissile("Blood", 24, 0, 0, 1)
-			Goto Spawn
-		Death:
-			BOON B 2 A_Scream
-			BOON C 2 A_Fall
-			BOON C 0 A_CustomMissile("BloodSpeck2", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON D 1 A_CustomMissile("BSplatter", 0, 0, 45, 1)
-			BOON D 1 A_TossGib
-			BOON E 1 A_CustomMissile("FlyingGut", 4, 0, 225, 1)
-			BOON C 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON E 1 A_TossGib
-			BOON E 1 A_CustomMissile("FlyingGut", 8, 0, 90, 1)
-			BOON E 0 A_CustomMissile("BloodSpeck2", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON F 1 A_CustomMissile("FlyingGut", 12, 0, 270, 1)
-			BOON F 1 A_TossGib
-			BOON F 0 A_CustomMissile("FlyingGut", 12, 0, 30,1)
-			BOON C 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON F 0 A_CustomMissile("FlyingGut", 12, 0, 270, 1)
-			BOON C 0 A_CustomMissile("FlyingGut", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON C 0 A_CustomMissile("FlyingGut", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON C 0 A_CustomMissile("FlyingGut", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON F 1 A_TossGib
-			BOON F 1 A_CustomMissile("BSplatter", 4, 0, -90, 1)
-			BOON F 0 A_CustomMissile("BloodSpeck3", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON F 0 A_CustomMissile("FlyingGut", 4, 0, -300, 1)
-			BOON G 1 A_CustomMissile("FlyingGut", 8, 0, 180, 1)
-			BOON G 0 A_CustomMissile("BloodSpeck2", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON G 1 A_TossGib
-			BOON G 0 A_CustomMissile("FlyingGut", 8, 0, 300, 1)
-			BOON G 0 A_CustomMissile("BloodSpeck3", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON G 0 A_Jump (240,2) 
-			BOON G 0 A_CustomMissile("GoreWorm", 16, 0, 0, 1)
-			BOON C 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON G 0 A_TossGib
-			BOON G 0 A_TossGib
-			BOON G 0 A_TossGib
-			BOON G 0 A_TossGib
-			BOON G 1 A_TossGib
-			BOON G 0 A_CustomMissile("BloodSpeck2", 8, 0, random(-180, 180), 2, random(-180, 180))
-			BOON G 1 A_CustomMissile("FlyingGut", 0, 0, 45, 1)
-			BOON G 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(-180, 180))
-			Stop
 	}
 }
 ACTOR GoreBalloons : Ammo 30202
@@ -4729,11 +4754,6 @@ actor RevRocket
 			GLOB H 4 Bright 
 			Stop
 	}
-}
-actor RevRocket2 : RevRocket
-{
-	Speed 18
-	Damage 5
 }
 ACTOR PopcornGun : Weapon //30204
 {

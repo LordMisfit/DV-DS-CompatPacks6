@@ -1421,7 +1421,15 @@ actor HappyCloud : AetheriusProjectileZSC
 	States 
 	{
 		Spawn: 
-			CLOD ABCBABCBABCBABCBABCDCBABCDCBCBABCDEFG 6 
+			CLOD AABBCCBBAABBCCBBAABBCCBBAABBCCBBAABBCCDDCCBBAABBCCDDCCBBCCBBAABBCCDDEEFFGG 3
+			{
+				A_ScaleVelocity(0.9875);
+			}
+			CLOD A 0
+			{
+				if (random(1,3) <= 1) { return state("Spawn"); }
+				return state("");
+			}
 			Stop 
 		Death: 
 			CLOD ABCDEFG 4 
@@ -4207,12 +4215,14 @@ ACTOR BouncingClownNew : AetheriusMonsterZSC replaces BouncingClown 4822
 	PainChance "Melee", 128
 	PainChance "Sceptre", 256
 	PainChance "Holy", 256
+	PainChance "Fire", 6
 	DamageFactor "Sceptre", 1 // Sceptre does full damage
 	DamageFactor "Magic", 0.75 // Magic does damage, but not quite a full amount
 	DamageFactor "Holy", 2 // Diaris Arrows hurt it like no-one's business
 	DamageFactor "Melee", 1.25
 	DamageFactor "Stomp", 1.25
 	DamageFactor "Trample", 1.25
+	DamageFactor "Fire", 0.25
 
 	DamageFactor 0.125 // Most other damage doesn't work well [1/8th normal damage]
 	RadiusDamageFactor 0.125
@@ -4395,8 +4405,10 @@ ACTOR BabyClownNew : AetheriusMonsterZSC replaces BabyClown 4823
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Holy", 2
+	DamageFactor "Fire", 0.25
 	DamageFactor "Magic", 1.25
 	Painchance "Holy", 255
+	Painchance "Fire", 50
 	Painchance "Magic", 250
 	MONSTER 
 	Scale 0.25
@@ -4526,8 +4538,10 @@ ACTOR BabyClown2New : AetheriusMonsterZSC replaces BabyClown2 4825
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Holy", 2
+	DamageFactor "Fire", 0.25
 	DamageFactor "Magic", 1.25
 	Painchance "Holy", 255
+	Painchance "Fire", 50
 	Painchance "Magic", 250
 	MONSTER 
 	Scale 0.25
@@ -5887,6 +5901,66 @@ ACTOR GoreBalloonNew : Circus2Weapon replaces GoreBalloon 30030
 			Goto Select
 	}
 }
+actor GoreBalloon666 : AetheriusProjectileZSC
+{
+	Radius 8
+	Height 6
+	Speed 13
+	Damage 6
+	scale 1
+	+SeeKERMISSILE +FloatBob 
+	PROJECTILE
+	ALPHA 0.8
+	SeeSound ""
+	DeathSound "pop1"
+	States
+	{
+		Spawn:
+			BOON A 4 A_SeekerMissile (30,40)
+			BOON A 4 A_CustomMissile("Blood", 24, 0, 0, 1)
+			Goto Spawn
+		Death:
+			BOON B 2 A_Scream
+			BOON C 2 A_Fall
+			BOON C 0 A_CustomMissile("BloodSpeck2", 8, 0, random(-180, 180), 2, random(-180, 180))
+			BOON D 1 A_CustomMissile("BSplatter", 0, 0, 45, 1)
+			BOON D 1 A_TossGib
+			BOON E 1 A_CustomMissile("FlyingGut", 4, 0, 225, 1)
+			BOON C 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(-180, 180))
+			BOON E 1 A_TossGib
+			BOON E 1 A_CustomMissile("FlyingGut", 8, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER)
+			BOON E 0 A_CustomMissile("BloodSpeck2", 8, 0, random(-180, 180), 2, random(-180, 180))
+			BOON F 1 A_CustomMissile("FlyingGut", 12, 0, 270, CMF_AIMOFFSET|CMF_TRACKOWNER)
+			BOON F 1 A_TossGib
+			BOON F 0 A_CustomMissile("FlyingGut", 12, 0, 30, CMF_AIMOFFSET|CMF_TRACKOWNER)
+			BOON C 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(-180, 180))
+			BOON F 0 A_CustomMissile("FlyingGut", 12, 0, 270, CMF_AIMOFFSET|CMF_TRACKOWNER)
+			BOON C 0 A_CustomMissile("FlyingGut", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+			BOON C 0 A_CustomMissile("FlyingGut", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+			BOON C 0 A_CustomMissile("FlyingGut", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+			BOON F 1 A_TossGib
+			BOON F 1 A_CustomMissile("BSplatter", 4, 0, -90, 1)
+			BOON F 0 A_CustomMissile("BloodSpeck3", 8, 0, random(-180, 180), 2, random(-180, 180))
+			BOON F 0 A_CustomMissile("FlyingGut", 4, 0, -300, CMF_AIMOFFSET|CMF_TRACKOWNER)
+			BOON G 1 A_CustomMissile("FlyingGut", 8, 0, 180, CMF_AIMOFFSET|CMF_TRACKOWNER)
+			BOON G 0 A_CustomMissile("BloodSpeck2", 8, 0, random(-180, 180), 2, random(-180, 180))
+			BOON G 1 A_TossGib
+			BOON G 0 A_CustomMissile("FlyingGut", 8, 0, 300, CMF_AIMOFFSET|CMF_TRACKOWNER)
+			BOON G 0 A_CustomMissile("BloodSpeck3", 8, 0, random(-180, 180), 2, random(-180, 180))
+			BOON G 0 A_Jump (240,2) 
+			BOON G 0 A_CustomMissile("GoreWorm", 16, 0, 0, 1)
+			BOON C 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(-180, 180))
+			BOON G 0 A_TossGib
+			BOON G 0 A_TossGib
+			BOON G 0 A_TossGib
+			BOON G 0 A_TossGib
+			BOON G 1 A_TossGib
+			BOON G 0 A_CustomMissile("BloodSpeck2", 8, 0, random(-180, 180), 2, random(-180, 180))
+			BOON G 1 A_CustomMissile("FlyingGut", 0, 0, 45, CMF_AIMOFFSET|CMF_TRACKOWNER)
+			BOON G 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(-180, 180))
+			Stop
+	}
+}
 actor GoreBalloon666NoHurt : AetheriusProjectileZSC
 {
 	Radius 8
@@ -6019,89 +6093,6 @@ ACTOR ClownGrenadeNew : Circus2Weapon replaces ClownGrenade 30029
 				else if (CallACS("MiscVarCheckDECORATE",10035) >= 5) { A_SetTics(4); }
 			}
 			Goto Ready 
-	}
-}
-actor CGrenadeNoHurt : AetheriusProjectileZSC
-{
-	Radius 8
-	Height 16
-	Speed 25
-	Damage 2
-	Scale 0.5
-	+Missile +NOTELEPORT
-	SeeSound ""
-	DeathSound ""
-	ExplosionRadius 256
-	ExplosionDamage 128
-	States
-	{
-		Spawn:
-			CGRD ABCDEFGHIJKL 3 A_CustomMissile("cloud", 4, 0, 0, 1)  
-			Goto Spawn 
-		Death: 
-			CGRD M 0 A_Jump (128,12)
-			CGRD MMMMMMMMMM 3
-			CGRD M 0 A_Jump (255,11)
-			CGRD NNNNNNNNNN 3
-			PBFF A 0 A_Explode(128,256,0)
-			PBFF A 0 A_PlaySound("BULBEXP") 
-			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSparkNoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
-			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSparkNoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
-			GHFF A 1
-			GHFF AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSparkNoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))    
-			GHFF AAAAAAAAAAAAAAAAA 0 A_CustomMissile("GrenadeSpark2NoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
-			GHFF BC 4 A_CustomMissile("GrenadeSparkNoHurt", 2, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(0, 180))
-			GHFF DDDDEEEE 1 
-			GHFF FFFFGGGG 1 
-			GHFF HI 4 
-			GHFF J 4 
-			Stop
-	}
-}
-Actor GrenadeSparkNoHurt
-{
-	Radius 2
-	Height 2
-	Speed 17
-	+Missile +NOTELEPORT
-	scale 1
-	damage 8
-	SeeSound ""
-	DeathSound ""
-	States
-	{
-		Spawn:
-			CRZY R 1 Bright 
-			Goto Spawn
-		Death:
-			PWT2 G 3 Bright 
-			PWT2 H 3 Bright 
-			PWT2 IIIIIIIII 3 Bright 
-			PWH4 JJJJJJJJJKKKKKKKKKLLLLLLLLLLLLL 3 Bright 
-			Stop
-	}
-}
-
-Actor GrenadeSpark2NoHurt
-{
-	Radius 2
-	Height 2
-	Speed 17
-	+Missile +NOTELEPORT
-	scale 1.5
-	damage 25
-	SeeSound ""
-	DeathSound ""
-	States
-	{
-		Spawn:
-			CRZY PQR 1 Bright
-			Goto Spawn
-		Death:
-			PWT2 G 3 Bright 
-			PWT2 H 3 Bright 
-			PWT2 I 3 Bright 
-			Stop
 	}
 }
 
@@ -6304,6 +6295,60 @@ ACTOR GasRocketLauncherNew : Circus2Weapon replaces GasRocketLauncher 30203
 			Goto Ready 
 	}
 } 
+actor RevRocket2 : AetheriusProjectileZSC
+{
+	Speed 18
+	Damage 5
+	Radius 8
+	Height 6
+	Scale 0.55
+	+SEEKERMISSILE
+	PROJECTILE
+	SeeSound "REVRCK"
+	DeathSound "EXPLODE"
+	ExplosionRadius 96
+	ExplosionDamage 12
+	States
+	{
+		Spawn:
+			RRCK A 1 A_SeekerMissile (30,40)
+			RRCK A 1 A_CustomMissile("RevTrail",0, 0, 0)
+			RRCK A 1 A_PlaySound("HISS")
+			RRCK A 0 A_CustomMissile("ClownSpark", 8, 0, random(-180, 180), 2, random(-180, 180))
+			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)  
+			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)
+			RRCK A 0 A_CustomMissile("ClownSpark", 8, 0, random(-180, 180), 2, random(-180, 180))
+			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)  
+			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1) 
+			RRCK A 0 A_CustomMissile("ClownSpark", 8, 0, random(-180, 180), 2, random(-180, 180))
+			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)  
+			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)  
+			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)
+			RRCK A 0 A_CustomMissile("ClownSpark", 8, 0, random(-180, 180), 2, random(-180, 180))
+			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)
+			RRCK A 0 A_CustomMissile("ClownSpark", 8, 0, random(-180, 180), 2, random(-180, 180))
+			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)  
+			Loop
+		Death:
+			GLOB A 4 Bright 
+			GLOB B 4 Bright A_Explode(12,96)
+			GLOB B 2 Bright A_CustomMissile("HappyCloud", 16, 8, 135, CMF_AIMOFFSET|CMF_TRACKOWNER) 
+			GLOB BBBBBBB 0 A_CustomMissile("Sparkles", 4,4, random(-180, 180), 2, random(-180, 180))
+			GLOB B 2 Bright A_CustomMissile("HappyCloud", 12, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER) 
+			GLOB B 2 Bright A_CustomMissile("HappyCloud", 16, -8, -135, CMF_AIMOFFSET|CMF_TRACKOWNER) 
+			GLOB C 2 Bright A_CustomMissile("HappyCloud", 16, 0, -200, CMF_AIMOFFSET|CMF_TRACKOWNER) 
+			GLOB CCCCCCC 0 A_CustomMissile("Sparkles", 4, 4, random(-180, 180), 2, random(-180, 180))
+			GLOB D 2 Bright A_CustomMissile("HappyCloud", 18, 0, 45, CMF_AIMOFFSET|CMF_TRACKOWNER) 
+			GLOB E 2 Bright A_CustomMissile("HappyCloud", 16, 8, 300, CMF_AIMOFFSET|CMF_TRACKOWNER) 
+			GLOB E 2 Bright A_CustomMissile("HappyCloud", 16, 0, 200, CMF_AIMOFFSET|CMF_TRACKOWNER)
+			GLOB EEEEEEE 0 A_CustomMissile("Sparkles", 4, 4, random(-180, 180), 2, random(-180, 180))
+			GLOB F 2 Bright A_CustomMissile("HappyCloud", 22, -8, 315, CMF_AIMOFFSET|CMF_TRACKOWNER) 
+			GLOB G 2 Bright A_CustomMissile("HappyCloud", 16, 0, 270, CMF_AIMOFFSET|CMF_TRACKOWNER) 
+			GLOB G 2 Bright A_CustomMissile("HappyCloud", 12, 8, 180, CMF_AIMOFFSET|CMF_TRACKOWNER) 
+			GLOB H 4 Bright 
+			Stop
+	}
+}
 actor RevRocket2NoHurt : AetheriusProjectileZSC
 {
 	Speed 18
