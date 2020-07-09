@@ -104,6 +104,7 @@ ACTOR Cyberpushover : Cyberdemon 1336
 // ************************
 ACTOR MummyDude // 1337
 {
+	Tag "Golem"
 	//$Color 12
 	//$Category "Unloved Monsters"
 	Health 80
@@ -153,6 +154,7 @@ ACTOR MummyDude // 1337
 // ************************
 ACTOR MummyLeaderMan : MummyDude // 1338
 {
+	Tag "NitroGolem"
 	//$Category "ZDoom Monster pack"
 	SpawnID 2
 	Health 120
@@ -173,6 +175,7 @@ ACTOR MummyLeaderMan : MummyDude // 1338
 
 actor MiniFirePuff : AetheriusProjectileZSC
 {
+	Tag "Dragon Familiar Breath"
 	Damage (1 * random(1,8))
 	Radius 6
 	Height 10
@@ -315,6 +318,7 @@ actor ImpWarlord // 3105
 
 actor YellowSkullSeeker : AetheriusProjectileZSC
 {
+	Tag "Warlord Gold Skull"
 	Damage (3 * random(1,8))
 	Radius 8
 	Height 6
@@ -356,6 +360,7 @@ actor YellowSkullSeekerCrisis : YellowSkullSeeker
 
 actor GreenPoisonBall : AetheriusEffectProjectile
 {
+	Tag "Warlord Poison Spread"
 	Damage (3 * random(1,8))
 	Radius 8
 	Height 6
@@ -445,6 +450,7 @@ ACTOR FamiliarSpawner
 
 actor RedSkullBall : AetheriusProjectileZSC
 {
+	Tag "Warlord Blood Skull"
 	Damage (12 * random(1,8))
 	Radius 8
 	Height 6
@@ -762,6 +768,7 @@ ACTOR BloodFiend : Demon // 30100
 
 ACTOR Bloodshot : AetheriusProjectileZSC
 {
+	Tag "Blood Fiend Puke"
 	Radius 3
 	Height 3
 	Speed 20
@@ -1068,6 +1075,7 @@ ACTOR Shadow // 3126
 
 ACTOR ShadowBall : AetheriusProjectileZSC
 {
+	Tag "Shadow Ball"
 	Radius 6
 	Height 8
 	Speed 12
@@ -1257,6 +1265,7 @@ actor SoulHarvester // 3117
 
 actor SoulHarvesterBall : AetheriusProjectileZSC
 {
+	Tag "Harvester Fireball"
 	Radius 8
 	Height 6
 	Scale 0.4
@@ -1400,7 +1409,9 @@ ACTOR Cultist // 30119
 
 ACTOR ThrallShot1 : AetheriusProjectileZSC
 {
+	Tag "Thrall Ice Shard"
 	Damage ((1 * random(1,8)) + random(2,6))
+	DamageType "Ice"
 	Radius 4
 	Height 6
 	Speed 14
@@ -1542,6 +1553,7 @@ ACTOR AcolFX2
 
 ACTOR AcolyteShot : AetheriusProjectileZSC
 {
+	Tag "Acolyte Shot"
 	Damage (1 * random(1,8))
 	Radius 8
 	Height 16
@@ -1758,6 +1770,7 @@ ACTOR DSFX3
 
 ACTOR DiscipleShot1 : AetheriusProjectileZSC
 {
+	Tag "Disciple Shot"
 	Damage (3 * random(1,8))
 	Radius 8
 	Height 16
@@ -1799,6 +1812,7 @@ ACTOR DiscipleShot1Crisis : DiscipleShot1
 
 ACTOR DiscipleShot2 : AetheriusProjectileZSC
 {
+	Tag "Disciple Shot"
 	Damage (6 * random(1,8))
 	Radius 8
 	Height 16
@@ -1944,6 +1958,8 @@ actor Vulgar : DoomImp // 30127
 
 ACTOR VulgarShot : AetheriusProjectileZSC
 {
+	Tag "Vulgar Poison Blast"
+	DamageType "Poison"
 	Radius 8
 	Height 16
 	Speed 10
@@ -2053,6 +2069,7 @@ ACTOR Wicked // 30133
 
 ACTOR WickedShot : AetheriusProjectileZSC
 {
+	Tag "Wicked Fireball"
 	Damage (5 * random(1,8))
 	Radius 8
 	Height 8
@@ -2215,6 +2232,7 @@ actor AoDGhost
 
 ACTOR FireBlast : AetheriusProjectileZSC
 {
+	Tag "Apprentice FireBlast"
 	Damage (3 * random(1,4))
 	Speed 25
 	Scale 0.75
@@ -2263,6 +2281,7 @@ ACTOR FireBlastCrisis : FireBlast
 
 ACTOR SuperFireBlast : FireBlast
 {
+	Tag "Apprentice Super FireBlast"
 	Damage (24 * random(1,4))
 	Speed 16
 	Scale 1.5
@@ -2555,6 +2574,7 @@ ACTOR Avatar // 30125
 
 ACTOR RedLiteTop : AetheriusLightningTop
 {
+	Tag "Avatar Lightning Arc"
 	Damage (8 * random(1,8))
 	Mass 3
 	Stamina 1
@@ -2583,6 +2603,7 @@ ACTOR RedLiteTop : AetheriusLightningTop
 }
 ACTOR RedLiteTopCrisis : RedLiteTop
 {
+	Tag "Avatar Lightning Arc"
 	Damage ((8 * random(1,8)) * CrisisMultiplier)
 	Mass 3
 	Stamina 1
@@ -2620,6 +2641,7 @@ ACTOR RedLiteTopCrisis : RedLiteTop
 
 ACTOR RedLiteBot : AetheriusLightningBottom
 {
+	Tag "Avatar Lightning Arc"
 	Damage (8 * random(1,8))
 	Mass 3
 	Stamina 1
@@ -2713,6 +2735,7 @@ ACTOR RedLiteZapCrisis : RedLiteZap
 
 ACTOR AvaFireBall : AetheriusProjectileZSC
 {
+	Tag "Avatar Fireblast"
 	Damage (5 * random(1,8))
 	Radius 9
 	Height 18
@@ -2755,6 +2778,7 @@ ACTOR AvaFireBallCrisis : AvaFireBall
 
 ACTOR AvaBall1 : AetheriusProjectileZSC
 {
+	Tag "Avatar UltiSphere"
 	Damage (100 * random(1,8))
 	Radius 20
 	Height 40
@@ -2818,6 +2842,7 @@ ACTOR AvaBall1Crisis : AvaBall1
 
 ACTOR AvaBall2 : AetheriusProjectileZSC
 {
+	Tag "Avatar Sphere"
 	Damage (random(2,3) * random(1,8))
 	Radius 10
 	Height 20
@@ -2879,6 +2904,7 @@ ACTOR AvaBall2Crisis : AvaBall2
 
 ACTOR AvaBall3 : AetheriusProjectileZSC
 {
+	Tag "Avatar MiniSphere"
 	Damage (1 * random(1,8))
 	Radius 6
 	Height 12
@@ -2939,6 +2965,7 @@ ACTOR AvaBall3Crisis : AvaBall3
 
 ACTOR AvaBall4 : AetheriusProjectileZSC
 {
+	Tag "Avatar MicroSphere"
 	Damage (random(0,1) * random(1,8))
 	Radius 3
 	Height 6
@@ -2981,6 +3008,7 @@ ACTOR AvaBall4Crisis : AvaBall4
 
 ACTOR HolyMissile2 : AetheriusProjectileZSC
 {
+	Tag "Divine Missile"
 	Radius 3
 	Height 3
 	Speed 20
@@ -3262,6 +3290,7 @@ ACTOR DarkCyberGhostD : DarkCyberGhostA
 
 ACTOR DCBMiss1 : AetheriusProjectileZSC
 {
+	Tag "Dark BFG"
 	Damage (30 * random(1,8))
 	Radius 12
 	Height 12
@@ -3329,6 +3358,7 @@ ACTOR DCBM1Trail
 
 ACTOR DCBMiss2 : AetheriusProjectileZSC
 {
+	Tag "Dark Rocket"
 	Damage (15 * random(1,8))
 	Radius 12
 	Height 8
@@ -3369,6 +3399,7 @@ ACTOR DCBMiss2Crisis : DCBMiss2
 
 ACTOR DCBMiss3
 {
+	Tag "Apocalypse Firewave"
 	Damage (0 * random(1,8))
 	Radius 1
 	Height 1
@@ -3416,6 +3447,7 @@ ACTOR DCBMiss3Crisis : DCBMiss3
 
 ACTOR DCBMiss3M : AetheriusProjectileZSC
 {
+	Tag "Apocalypse Firewave"
 	Damage (20 * random(1,8))
 	Radius 10
 	Height 10

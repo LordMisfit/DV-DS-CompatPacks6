@@ -1,5 +1,6 @@
 actor MyBall2 : AetheriusEffectProjectile
 {
+	Tag "Micro Deadlight"
 	Radius 8
 	Height 6
 	Speed 10
@@ -3239,6 +3240,7 @@ actor BSplatter
 }
 actor MyBall : AetheriusProjectileZSC
 {
+	Tag "Bingo Shot"
 	Radius 8
 	Height 6
 	Speed 15
@@ -3281,6 +3283,7 @@ actor bsmoke
 
 actor MyBall3 : AetheriusEffectProjectile
 {
+	Tag "Micro Deadlight"
 	Radius 8
 	Height 6
 	Speed 5
@@ -5627,8 +5630,9 @@ ACTOR CrazyBits10 : CrazyBits1
 			Stop
 	}
 }
-Actor CrazyBalls
+Actor CrazyBalls : AetheriusProjectileZSC
 {
+	Tag "Crazy Ball Shot"
 	Radius 8
 	Height 6
 	Speed 3
@@ -5760,6 +5764,7 @@ ACTOR BloodSpeck3 : BloodSpeck1
 } 
 actor FlyingGut : AetheriusProjectileZSC
 {
+	Tag "Explosive Gut"
 	Radius 8
 	Height 6
 	Speed 13

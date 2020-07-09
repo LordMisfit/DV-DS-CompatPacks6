@@ -105,6 +105,7 @@ actor YithGun : Weapon replaces PlasmaRifle
 
 actor ElectroBlast : FastProjectile
 {
+	Tag "Electro Blast"
 	Radius 13
 	Height 8
 	Speed 100

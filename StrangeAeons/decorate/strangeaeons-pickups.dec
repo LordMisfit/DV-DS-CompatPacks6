@@ -604,6 +604,7 @@ ACTOR DualImpalerXBow : ImpalerXBow
 
 ACTOR SonicNail : MageWandMissileNew
 {
+	Tag "Impaler Bolt"
 	damage (finaldamagedealt) // 3
 	Scale 0.7
 	Speed 150 // 75
@@ -1040,6 +1041,7 @@ Actor DualScepterOfSouls : FloraWeapon 11112
 
 Actor SoulScepterPuff : AetheriusPuffZSC
 {
+	Tag "Soul Scepter"
 	Radius 3
 	Height 3
 	+NoClip
@@ -1062,6 +1064,7 @@ Actor SoulScepterPuff : AetheriusPuffZSC
 
 Actor DualSoulScepterPuff : AetheriusPuffZSC
 {
+	Tag "Soul Scepter"
 	Radius 3
 	Height 3
 	+NoClip
@@ -1084,6 +1087,7 @@ Actor DualSoulScepterPuff : AetheriusPuffZSC
 
 Actor SoulScepterPuff2 : AetheriusPuffZSC
 {
+	Tag "Soul Scepter"
 	Radius 1
 	Height 1
 	+NoInteraction
@@ -1100,6 +1104,7 @@ Actor SoulScepterPuff2 : AetheriusPuffZSC
 
 Actor SoulScepterPowerPuff : AetheriusPuffZSC
 {
+	Tag "Soul Scepter"
 	Radius 3
 	Height 3
 	+NoClip
@@ -1125,6 +1130,7 @@ Actor SoulScepterPowerPuff : AetheriusPuffZSC
 
 Actor DualSoulScepterPowerPuff : AetheriusPuffZSC
 {
+	Tag "Soul Scepter"
 	Radius 3
 	Height 3
 	+NoClip

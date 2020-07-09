@@ -166,21 +166,13 @@ actor GreenBalloon replaces BallGreen
 	+CANNOTPUSH
 	+NOBLOCKMONST 
 	DropItem "Clip", 51
-	DropItem "Clip", 10
 	DropItem "ClipBox", 10
-	DropItem "ClipBox", 2
 	DropItem "Shell", 51
-	DropItem "Shell", 10
 	DropItem "ShellBox", 10
-	DropItem "ShellBox", 2
 	DropItem "RocketAmmo", 51
-	DropItem "RocketAmmo", 10
 	DropItem "RocketBox", 10
-	DropItem "RocketBox", 2
 	DropItem "Cell", 51
-	DropItem "Cell", 10
 	DropItem "CellPack", 10
-	DropItem "CellPack", 2
 	DropItem "HealthBonus", 40
 	DropItem "HealthBonus", 8
 	DropItem "ArmorBonus", 40
@@ -857,6 +849,7 @@ ACTOR BigBerthaNew : AetheriusMonsterZSC replaces BigBertha 3225
 //******************************************************************************************
 actor RevRocket : AetheriusProjectileZSC
 {
+	Tag "Clown Missile"
 	Radius 8
 	Height 6
 	Speed 12
@@ -955,6 +948,7 @@ actor RevRocketCrisis : RevRocket
 //******************************************************************************************
 actor SpawnRck : AetheriusProjectileZSC
 {
+	Tag "Clown Rocket"
 	Radius 8
 	Height 6
 	Speed 8

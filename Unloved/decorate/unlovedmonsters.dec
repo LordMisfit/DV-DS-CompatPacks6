@@ -106,6 +106,7 @@ actor MummyNew : AetheriusMonsterZSC replaces MummyDude 1337
 
 ACTOR MummyFX1New : AetheriusProjectileZSC replaces MummyFX1 
 {
+	Tag "Screamer Fireskull"
 	Damage (4 * random(1,8))
 	DamageType "Fire" 
 }
@@ -292,6 +293,8 @@ actor MummyLeaderNew : AetheriusMonsterZSC replaces MummyLeaderMan 1338
 
 ACTOR VulgarShotNew : AetheriusEffectProjectile
 {
+	Tag "Vulgar Poison Blast"
+	DamageType "Poison"
 	Damage (4 * random(1,8))
 	Radius 8
 	Height 16
@@ -1262,6 +1265,7 @@ ACTOR ChainsawZombieNew : AetheriusMonsterZSC replaces ChainsawZombie 32064
 
 ACTOR BloodshotNew : AetheriusEffectProjectile replaces BloodShot
 {
+	Tag "Blood Fiend Puke"
 	Damage (2 * random(1,8))
 	Radius 3
 	Height 3
