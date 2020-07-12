@@ -2820,7 +2820,7 @@ ACTOR AvatarNew : AetheriusMonsterZSC replaces Avatar 30125
 	//$Angled
 	//$Color 12
 	//$Category "Unloved Monsters/Boss"
-	Tag "\cfThe Avatar\c-"
+	Tag "The Avatar"
 
 	Health 4000
 	PainChance 10
@@ -3053,7 +3053,7 @@ ACTOR ThamuzNew : AetheriusMonsterZSC replaces Thamuz 7228
 	//$Angled
 	//$Color 12
 	//$Category "Unloved Monsters/Boss"
-	Tag "\cfThamuz, The Dark God\c-"
+	Tag "Thamuz, The Dark God"
 
 	Radius 40
 	Height 110

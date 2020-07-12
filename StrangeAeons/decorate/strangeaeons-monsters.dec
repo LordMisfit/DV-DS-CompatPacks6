@@ -4842,7 +4842,7 @@ actor Nyarlathotep : AetheriusMonsterZSC 7801
 	//$Category "Strange Aeons Monsters"
 	spawnid 171
 	obituary "%o was smote by the hand of The Crawling Chaos."
-	tag "\cfNyarlathotep, The Crawling Chaos\c-"
+	tag "Nyarlathotep, The Crawling Chaos"
 	radius 20
 	height 80
 	meleeDamage 3

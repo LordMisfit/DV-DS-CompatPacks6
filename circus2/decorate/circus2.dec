@@ -3827,7 +3827,7 @@ actor SuperBerthaNew : AetheriusMonsterZSC replaces SuperBertha 14768
 	//$Angled
 	//$Color 12
 	//$Category "Happy Time Circus/Monsters"
-	Tag "\cfSUPER Big Bertha\c-"
+	Tag "Super Bertha"
 	
 	Health 6000 
 	Speed 7 
@@ -5225,7 +5225,7 @@ actor PennywiseBoss : AetheriusMonsterZSC replaces Pennywise 3672
 	//$Angled
 	//$Color 12
 	//$Category "Happy Time Circus/Bosses"
-	Tag "\cfPennywise The Dancing Clown\c-"
+	Tag "Pennywise The Dancing Clown"
 
 	Health 45000
 	Radius 40
