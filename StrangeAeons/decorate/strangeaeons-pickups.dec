@@ -292,7 +292,6 @@ ACTOR ImpalerXBow : FloraWeapon replaces Chainsaw
 			stop
 
 		// Zoom :V
-
 		User4:
 			CBOW A 0
 			{

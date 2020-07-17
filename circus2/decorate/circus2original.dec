@@ -4403,6 +4403,7 @@ ACTOR ClownGrenade : Weapon //30029
 }
 actor CGrenade : AetheriusProjectileZSC
 {
+	Tag "Clown Grenade"
 	Radius 8
 	Height 16
 	Speed 25
@@ -4440,6 +4441,7 @@ actor CGrenade : AetheriusProjectileZSC
 }
 actor CGrenadeNoHurt : AetheriusProjectileZSC
 {
+	Tag "Clown Grenade"
 	Radius 8
 	Height 16
 	Speed 25
@@ -4575,7 +4577,6 @@ ACTOR CGrenadeAmmo: Ammo 30215
 	//$NotAngled
 	//$Color 19
 	//$Category "Happy Time Circus/Ammo"
-
 	+FloatBob 
 	Scale 0.5
 	Inventory.Amount 6
@@ -5151,7 +5152,7 @@ actor BurntPopcorn1
 			Stop
 	}
 }
-ACTOR CrawlingPopcorn 4815
+ACTOR CrawlingPopcorn : AetheriusBaseZSC 4815
 {
 	Health 5
 	Radius 2
@@ -5161,6 +5162,7 @@ ACTOR CrawlingPopcorn 4815
 	PainChance 200
 	//MONSTER 
 	+FLOORCLIP +RANDOMIZE 
+	+LOOKALLAROUND
 	-COUNTKILL
 	scale 0.25
 	MELEEDAMAGE 1
@@ -5176,15 +5178,19 @@ ACTOR CrawlingPopcorn 4815
 			CRWL A 4 A_Look
 			Loop
 		See:
-			CRWL A 0 A_Jump (32,5)
+			CRWL A 0
+			{
+				if (random(1,512) == 1) { return state("Evolve"); }
+				return state("");
+			}
+			CRWL A 0 A_Jump (32,"See2")
 			CRWL ABCB 5 A_Wander
-			Loop
+			goto See
+		See2:
 			CRWL ABCB 5 
 			CRWL A 1 A_PlaySound("POPC")
-			CRWL A 0 A_Jump (3,1)
-			Loop
-			CRWL A 0
-			GoTo Death
+			CRWL A 0 A_Jump (3,"Death")
+			goto See
 		Pain:
 			CRWL A 8 A_Pain 
 			Goto See 
@@ -5206,6 +5212,16 @@ ACTOR CrawlingPopcorn 4815
 			CRWL ABC 21
 			CRWL AAAAAAAA 16
 			Stop 
+		Evolve:
+			CRWL A 8 A_CustomMissile("cloud1", 12, 0, 0, 1)
+			CRWL A 8 A_CustomMissile("cloud1", 12, 0, 1)
+			CRWL A 8 A_CustomMissile("cloud1", 12, 0, 0, 1)
+			CRWL A 0
+			{
+				if (random(1,32) <= 31) { A_SpawnItemEx("BabyClown2New",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL,0,tid); }
+				A_Destroy;
+			}
+			stop
 	}
 }
 ACTOR CrawlingPopcorn2 : CrawlingPopcorn 4824 //doesn't die off
@@ -5216,12 +5232,18 @@ ACTOR CrawlingPopcorn2 : CrawlingPopcorn 4824 //doesn't die off
 			CRWL A 4 A_Look
 			Loop
 		See:
-			CRWL A 0 A_Jump (32,5)
+			CRWL A 0
+			{
+				if (random(1,2048) == 1) { return state("Evolve"); }
+				return state("");
+			}
+			CRWL A 0 A_Jump (32,"See2")
 			CRWL ABCB 5 A_Wander
-			Loop
+			goto See
+		See2:
 			CRWL ABCB 5 
 			CRWL A 1 A_PlaySound("POPC")
-			loop
+			goto See
 		Pain:
 			CRWL A 8 A_Pain 
 			Goto See 
@@ -5243,6 +5265,16 @@ ACTOR CrawlingPopcorn2 : CrawlingPopcorn 4824 //doesn't die off
 			CRWL ABC 21
 			CRWL AAAAAAAA 16
 			Stop 
+		Evolve:
+			CRWL A 8 A_CustomMissile("cloud1", 12, 0, 0, 1)
+			CRWL A 8 A_CustomMissile("cloud1", 12, 0, 1)
+			CRWL A 8 A_CustomMissile("cloud1", 12, 0, 0, 1)
+			CRWL A 0
+			{
+				if (random(1,8) <= 7) { A_SpawnItemEx("BabyClown2New",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL,0,tid); }
+				A_Destroy;
+			}
+			stop
 	}
 }
 
