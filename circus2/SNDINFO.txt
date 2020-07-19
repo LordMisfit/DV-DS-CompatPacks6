@@ -1,3 +1,12 @@
+Popcorn/Pop1 popcpop1
+Popcorn/Pop2 popcpop2
+
+boing1 boing1
+boing2 boing2
+boing3 boing3
+boing4 boing4
+$random randomboing { boing1 boing2 boing3 boing4 }
+
 BITE555 BITE555
 BITE556 BITE556
 $random CLWNBITE	{BITE555 BITE556}
