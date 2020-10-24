@@ -637,7 +637,8 @@ actor PennywiseHead2
 }
 
 ACTOR JSkull_Image1
-{    
+{
+	Tag "Jumping Skull Afterimage"
 	Speed 8
 	+FloatBob +NOGRAVITY 
 	MELEEDAMAGE 1
@@ -662,6 +663,7 @@ ACTOR JSkull_Image1
 }
 ACTOR JSkull_Image2
 {    
+	Tag "Jumping Skull Afterimage"
 	Speed 8
 	+FloatBob +NOGRAVITY 
 	MELEEDAMAGE 1
@@ -686,6 +688,7 @@ ACTOR JSkull_Image2
 }
 ACTOR JSkull_Image3
 {    
+	Tag "Jumping Skull Afterimage"
 	Speed 8
 	+FloatBob +NOGRAVITY 
 	MELEEDAMAGE 1
