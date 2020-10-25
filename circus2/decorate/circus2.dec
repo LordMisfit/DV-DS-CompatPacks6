@@ -1294,7 +1294,7 @@ actor RevRocketNew : AetheriusProjectileZSC replaces RevRocket
 			Loop
 		Death:
 			GLOB A 4 Bright 
-			GLOB B 4 Bright A_Explode(12,96)
+			GLOB B 4 Bright A_Explode(12,96,0)
 			GLOB B 2 Bright A_CustomMissile("HappyCloud", 16, 8, 135, CMF_AIMOFFSET|CMF_TRACKOWNER) 
 			GLOB BBBBBBB 0 A_CustomMissile("Sparkles", 4,4, random(-180, 180), 2, random(-180, 180))
 			GLOB B 2 Bright A_CustomMissile("HappyCloud", 12, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER) 
@@ -1366,7 +1366,7 @@ actor RevRocketCrisis : RevRocketNew
 			Loop
 		Death:
 			GLOB A 4 Bright 
-			GLOB B 4 Bright A_Explode((12 * CrisisMultiplier),96)
+			GLOB B 4 Bright A_Explode((12 * CrisisMultiplier),96,0)
 			GLOB B 2 Bright A_CustomMissile("HappyCloudCrisis", 16, 8, 135, CMF_AIMOFFSET|CMF_TRACKOWNER) 
 			GLOB BBBBBBB 0 A_CustomMissile("Sparkles", 4,4, random(-180, 180), 2, random(-180, 180))
 			GLOB B 2 Bright A_CustomMissile("HappyCloudCrisis", 12, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER) 
@@ -1681,6 +1681,7 @@ ACTOR BingoNew : AetheriusMonsterZSC replaces Bingo 4110
 //
 actor TinyBingoBall : AetheriusEffectProjectile
 {
+	Tag "Bingo Ball"
 	Radius 8
 	Height 6
 	Speed 15
@@ -1720,6 +1721,7 @@ actor TinyBingoBall : AetheriusEffectProjectile
 }
 actor TinyBingoBallCrisis : TinyBingoBall
 {
+	Tag "Bingo Ball"
 	Damage ((1 * random(1,8)) * CrisisMultiplier)
 	scale 0.5
 	ALPHA 0.8
@@ -6490,7 +6492,7 @@ actor RevRocket2 : AetheriusProjectileZSC
 			Loop
 		Death:
 			GLOB A 4 Bright 
-			GLOB B 4 Bright A_Explode(A_GetPlayerAttackDamage(82),96)
+			GLOB B 4 Bright A_Explode(A_GetPlayerAttackDamage(82),96,0)
 			GLOB B 2 Bright A_CustomMissile("HappyCloudPlayer", 16, 8, 135, CMF_AIMOFFSET|CMF_TRACKOWNER) 
 			GLOB BBBBBBB 0 A_CustomMissile("Sparkles", 4,4, random(-180, 180), 2, random(-180, 180))
 			GLOB B 2 Bright A_CustomMissile("HappyCloudPlayer", 12, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER) 
