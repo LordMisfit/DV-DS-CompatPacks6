@@ -1087,6 +1087,7 @@ ACTOR ShadowBall : AetheriusProjectileZSC
 	SeeSound "imp/attack"
 	DeathSound "imp/shotx"
 	Decal DoomImpScorch
+	DamageType "Dark"
 	States
 	{
 		Spawn: 
@@ -1277,6 +1278,7 @@ actor SoulHarvesterBall : AetheriusProjectileZSC
 	SeeSound "harvester/scream"
 	DeathSound "imp/shotx"
 	Decal DoomImpScorch
+	DamageType "Fire"
 	States
 	{
 		Spawn:
@@ -2579,6 +2581,7 @@ ACTOR RedLiteTop : AetheriusLightningTop
 	Mass 3
 	Stamina 1
 	Accuracy 1
+	DamageType "Lightning"
 	States
 	{
 		Spawn:
@@ -2646,6 +2649,7 @@ ACTOR RedLiteBot : AetheriusLightningBottom
 	Mass 3
 	Stamina 1
 	Accuracy 1
+	DamageType "Lightning"
 	States
 	{
 		Spawn:
@@ -2709,6 +2713,7 @@ ACTOR RedLiteBotCrisis : RedLiteBot
 ACTOR RedLiteZap : AetheriusLightningZap
 {
 	Damage (2 * random(1,8))
+	DamageType "Lightning"
 	States
 	{
 		Spawn:
@@ -2747,6 +2752,7 @@ ACTOR AvaFireBall : AetheriusProjectileZSC
 	ALPHA 0.80
 	SeeSound "weapons/bwoosh"
 	DeathSound "weapons/firex2"
+	DamageType "Fire"
 	States
 	{
 		Spawn:
@@ -3020,6 +3026,7 @@ ACTOR HolyMissile2 : AetheriusProjectileZSC
 	MissileType HolyMissileTrail
 	SeeSound "monster/bomb"
 	DeathSound "monster/explode"
+	DamageType "Holy"
 	States
 	{
 		Spawn:
