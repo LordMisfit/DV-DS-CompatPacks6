@@ -3430,7 +3430,7 @@ ACTOR DCBMiss3
 			Loop
 		Death:
 			FSFX NOPQRSTNOPQRST 3
-			FSFX Z 0 A_CustomMissile("DCBMiss3M",0,0,180)
+			FSFX Z 0 A_CustomMissile("DCBMiss3M",0,0,180,CMF_TRACKOWNER)
 			Stop
 	}
 }
@@ -3447,7 +3447,7 @@ ACTOR DCBMiss3Crisis : DCBMiss3
 			Loop
 		Death:
 			FSFX NOPQRSTNOPQRST 3
-			FSFX Z 0 A_CustomMissile("DCBMiss3MCrisis",0,0,180)
+			FSFX Z 0 A_CustomMissile("DCBMiss3MCrisis",0,0,180,CMF_TRACKOWNER)
 			Stop
 	}
 }
@@ -3475,7 +3475,7 @@ ACTOR DCBMiss3M : AetheriusProjectileZSC
 			}	
 			Loop
 		Death:
-			NULL A 0 A_Explode(64,64)
+			NULL A 0 A_Explode(64,64,0)
 			FSFX UVW 3
 			Stop
 	}
