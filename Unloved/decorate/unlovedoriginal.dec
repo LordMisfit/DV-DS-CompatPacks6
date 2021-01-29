@@ -1752,7 +1752,7 @@ ACTOR Disciple // 30117
 	}
 }
 
-ACTOR DSFX3
+ACTOR DSFX3 : AetheriusAfterimageZSC 
 {   
 	Radius 2
 	Height 2
@@ -1765,7 +1765,7 @@ ACTOR DSFX3
 	{
 		Spawn:
 			NULL A 3
-			DISC A 3 A_FadeOut(0.10)
+			DISC A 3 A_FadeOut(basealpha*0.10)
 			goto spawn+1
 	}
 }

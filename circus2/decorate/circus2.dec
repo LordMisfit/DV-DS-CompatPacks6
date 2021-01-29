@@ -759,7 +759,6 @@ ACTOR JumpingSkullNew : AetheriusMonsterZSC replaces JumpingSkull 32121
 	Painchance "Holy", 180
 	Painchance "Magic", 112
 	MONSTER 
-	DropItem ClownSouls 10
 	+FLOORCLIP +RANDOMIZE +COUNTKILL +CANPASS
 	MELEEDAMAGE 1
 	MeleeRange 25
@@ -1504,7 +1503,7 @@ ACTOR BingoNew : AetheriusMonsterZSC replaces Bingo 4110
 	Painchance "Magic", 160
 	MONSTER
 	DropItem GasRocketLauncher 255
-	DropItem ClownSouls 75
+	DropItem ClownSouls 64
 	+FLOORCLIP +NOGRAVITY +FLOAT +PUSHABLE +NORADIUSDMG 
 	+FloatBob +SPAWNFLOAT 
 	scale 0.85
@@ -1779,7 +1778,7 @@ ACTOR TinyBingoNew : AetheriusMonsterZSC replaces TinyBingo 4179
 	Painchance "Holy", 255
 	Painchance "Magic", 160
 	MONSTER
-	DropItem ClownSouls 10
+	DropItem ClownSouls 5
 	+FLOORCLIP +NOGRAVITY +FLOAT +PUSHABLE 
 	+FloatBob +SPAWNFLOAT 
 	scale 0.35
@@ -3196,7 +3195,7 @@ actor BulbyNew : AetheriusMonsterZSC replaces Bulby 3906
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
 	MONSTER
-	DropItem ClownSouls 30
+	DropItem ClownSouls 6
 	+FLOORCLIP +FLOAT +NOTARGET //+NORADIUSDMG 
 	SeeSound "BOTTLE2"
 	PainSound "GHS2PAIN"
@@ -3385,7 +3384,7 @@ actor MegaBulbyNew : AetheriusMonsterZSC replaces MegaBulby 3989
 	Painchance "Holy", 128
 	Painchance "Magic", 80
 	MONSTER
-	DropItem ClownSouls 200
+	DropItem ClownSouls 40
 	+FLOORCLIP +FLOAT +NORADIUSDMG +NOGRAVITY +FloatBob +NOTARGET
 	SeeSound "GHSTPAIN"
 	PainSound "GHSTPAIN"
@@ -4492,7 +4491,7 @@ ACTOR BabyClownNew : AetheriusMonsterZSC replaces BabyClown 4823
 	Painchance "Magic", 250
 	MONSTER 
 	Scale 0.25
-	DropItem ClownSouls 64
+	DropItem ClownSouls 32
 	+FLOORCLIP +RANDOMIZE +COUNTKILL +CANPASS
 	+LOOKALLAROUND
 	MELEEDAMAGE 3
@@ -4631,7 +4630,7 @@ ACTOR BabyClown2New : AetheriusMonsterZSC replaces BabyClown2 4825
 	Painchance "Magic", 250
 	MONSTER 
 	Scale 0.25
-	DropItem ClownSouls 64
+	DropItem ClownSouls 32
 	+FLOORCLIP +RANDOMIZE +COUNTKILL +CANPASS   
 	+LOOKALLAROUND
 	MELEEDAMAGE 3
@@ -5716,7 +5715,7 @@ ACTOR PopcornGunNew : Circus2Weapon replaces PopcornGun 30204
 	Weapon.AmmoType "PopcornPiece" 
 	Weapon.AmmoGive 20 
 	Weapon.AmmoUse 1
-	Inventory.Pickupmessage "You got the Popcorn Gun! Don't eat the popcorn... \cx[Slot 8]\c-" 
+	Inventory.Pickupmessage "You got the \cjPopcorn Gun\c-! Don't eat the popcorn... \cx[Slot 8]\c-" 
 	Obituary "%o ate some of %k's popcorn."
 	AttackSound "" 
 	Scale 0.75
@@ -5850,7 +5849,7 @@ ACTOR GoreBalloonNew : Circus2Weapon replaces GoreBalloon 30030
 	Weapon.AmmoType "GoreBalloons" 
 	Weapon.AmmoGive 5 
 	Weapon.AmmoUse 1
-	Inventory.Pickupmessage "You got some gore balloons! \cx[Slot 8]\c-" 
+	Inventory.Pickupmessage "You got some \cjgore balloons\c-! \cx[Slot 8]\c-" 
 	Obituary "%o wanted %k's balloon."
 	Scale 0.75
 	States 
@@ -6134,7 +6133,7 @@ ACTOR ClownGrenadeNew : Circus2Weapon replaces ClownGrenade 30029
 	Weapon.AmmoType "CGrenadeAmmo" 
 	Weapon.AmmoGive 5 
 	Weapon.AmmoUse 1
-	Inventory.Pickupmessage "You picked up some clown grenades \cx[Slot 0]\c-"
+	Inventory.Pickupmessage "You picked up some \cjclown grenades\c- \cx[Slot 0]\c-"
 	AttackSound "" 
 	+FloatBob 
 	Scale 0.3
@@ -6210,7 +6209,7 @@ ACTOR GutFlingerNew : Circus2Weapon replaces GutFlinger 30028
  	Weapon.AmmoGive 5 
 	Weapon.AmmoUse1 1
 	Weapon.AmmoUse2 1
-	Inventory.Pickupmessage "You got the Gut Flinger! \cx[Slot 9]\c-" 
+	Inventory.Pickupmessage "You got the \cjGut Flinger\c-! \cx[Slot 9]\c-" 
 	AttackSound "" 
 	Scale 1
 	States 
@@ -6389,7 +6388,7 @@ ACTOR GasRocketLauncherNew : Circus2Weapon replaces GasRocketLauncher 30203
 	Weapon.AmmoGive 20 
 	Weapon.AmmoUse1 5
 	Weapon.AmmoUse2 5
-	Inventory.Pickupmessage "You got the Gas Rocket Launcher \cx[Slot 9]\c-" 
+	Inventory.Pickupmessage "You got the \cjGas Rocket Launcher\c-! \cx[Slot 9]\c-" 
 	Obituary "%o choked on %k's gas."
 	AttackSound "" 
 	Scale 0.75
@@ -6577,7 +6576,7 @@ ACTOR CrazyBall2New : Circus2Weapon replaces CrazyBall2 30205
 	Weapon.AmmoType "CzBall" 
 	Weapon.AmmoGive 1 
 	Weapon.AmmoUse 1
-	Inventory.Pickupmessage "You got a crazy ball, use it wisely... \cx[Slot 0]\c-" 
+	Inventory.Pickupmessage "You got a \cjcrazy ball\c-, use it wisely... \cx[Slot 0]\c-" 
 	AttackSound "" 
 	Scale 0.6
 	+FLOATBOB
