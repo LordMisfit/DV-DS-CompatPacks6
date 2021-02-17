@@ -4461,6 +4461,7 @@ ACTOR PopcornPiece : Ammo 4832
 }
 Actor Popcorn_Shrap1
 {
+	Tag "Energy Shrapnel"
 	Radius 2
 	Height 2
 	Speed 3
@@ -4484,6 +4485,7 @@ Actor Popcorn_Shrap1
 }
 Actor Popcorn_Shrap2
 {
+	Tag "Energy Shrapnel"
 	Radius 2
 	Height 2
 	Speed 3
@@ -4507,6 +4509,7 @@ Actor Popcorn_Shrap2
 }
 Actor Popcorn_Shrap3
 {
+	Tag "Energy Shrapnel"
 	Radius 2
 	Height 2
 	Speed 3
@@ -4530,6 +4533,7 @@ Actor Popcorn_Shrap3
 }
 Actor Popcorn_Shrap4
 {
+	Tag "Energy Shrapnel"
 	Radius 2
 	Height 2
 	Speed 3
@@ -4553,6 +4557,7 @@ Actor Popcorn_Shrap4
 }
 Actor Popcorn_Shrap5
 {
+	Tag "Energy Shrapnel"
 	Radius 2
 	Height 2
 	Speed 3
@@ -4576,6 +4581,7 @@ Actor Popcorn_Shrap5
 }
 Actor Popcorn_Shrap6
 {
+	Tag "Energy Shrapnel"
 	Radius 2
 	Height 2
 	Speed 5
@@ -4598,6 +4604,7 @@ Actor Popcorn_Shrap6
 }
 Actor Popcorn_Shrap7
 {
+	Tag "Energy Shrapnel"
 	Radius 2
 	Height 2
 	Speed 6

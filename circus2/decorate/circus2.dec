@@ -1890,6 +1890,8 @@ actor BeefyBall1 : AetheriusEffectProjectile
 	+DONTBOUNCEONSHOOTABLES
 	+CANBOUNCEWATER
 	+USEBOUNCESTATE
+	+MTHRUSPECIES
+	Species "Beefy"
 	BounceType "Hexen"
 	BounceFactor 1.0
 	WallBounceFactor 1.0
@@ -1967,6 +1969,12 @@ actor BeefyBall1Crisis : BeefyBall1
 				A_ScaleVelocity(1.0000625);
 			}
 			Goto Spawn+2
+		Bounce:
+			TNT1 A 0 
+			{
+				A_PlaySound("randomboing",CHAN_5,1.0,0,ATTN_NORM,0,frandom(0.75,1.25));
+			}
+			Goto Spawn
 		Death:
 			TNT1 A 0 Bright
 			{
@@ -2013,6 +2021,8 @@ actor BeefyBall2 : BeefyBall1
 	scale 1.0
 	+SEEKERMISSILE
 	+USEBOUNCESTATE
+	+MTHRUSPECIES
+	Species "Beefy"
 	PROJECTILE
 	ALPHA 0.8
 	SeeSound "imp/attack"
@@ -2109,6 +2119,13 @@ actor BeefyBall2Crisis : BeefyBall2
 				A_CustomMissile("RevTrail", 0, 0, 0, 1);
 			}
 			Loop
+		Bounce:
+			TNT1 A 0 
+			{
+				A_DVDSSeekerBounce(18,3,false);
+				A_PlaySound("randomboing",CHAN_5,1.0,0,ATTN_NORM,0,frandom(0.75,1.25));
+			}
+			Goto Spawn
 		Death:
 			TNT1 A 0 Bright
 			{
@@ -2177,6 +2194,7 @@ actor BeefyNew : AetheriusMonsterZSC replaces Beefy 4333
 	HitObituary "%o was scratched by beefy the clown."
 	MissileHeight 32
 	MissileType BeefyBall1
+	Species "Beefy"
 	dropitem DoomSpellMana 24
 	dropitem DoomSpellMana 24
 	dropitem GreenArmor 2
