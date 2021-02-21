@@ -1038,7 +1038,7 @@ Actor DualScepterOfSouls : FloraWeapon 11112
 	}
 }
 
-Actor SoulScepterPuff : AetheriusPuffZSC
+Actor SoulScepterPuff : AetheriusSoulPuffZSC
 {
 	Tag "Soul Scepter"
 	Radius 3
@@ -1061,7 +1061,7 @@ Actor SoulScepterPuff : AetheriusPuffZSC
 	}
 }
 
-Actor DualSoulScepterPuff : AetheriusPuffZSC
+Actor DualSoulScepterPuff : AetheriusSoulPuffZSC
 {
 	Tag "Soul Scepter"
 	Radius 3
@@ -1084,7 +1084,7 @@ Actor DualSoulScepterPuff : AetheriusPuffZSC
 	}
 }
 
-Actor SoulScepterPuff2 : AetheriusPuffZSC
+Actor SoulScepterPuff2 : AetheriusSoulPuffZSC
 {
 	Tag "Soul Scepter"
 	Radius 1
@@ -1101,7 +1101,7 @@ Actor SoulScepterPuff2 : AetheriusPuffZSC
 	}
 }
 
-Actor SoulScepterPowerPuff : AetheriusPuffZSC
+Actor SoulScepterPowerPuff : AetheriusSoulPuffZSC
 {
 	Tag "Soul Scepter"
 	Radius 3
@@ -1127,7 +1127,7 @@ Actor SoulScepterPowerPuff : AetheriusPuffZSC
 	}
 }
 
-Actor DualSoulScepterPowerPuff : AetheriusPuffZSC
+Actor DualSoulScepterPowerPuff : AetheriusSoulPuffZSC
 {
 	Tag "Soul Scepter"
 	Radius 3
