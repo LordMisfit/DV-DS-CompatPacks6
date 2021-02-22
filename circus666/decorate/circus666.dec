@@ -514,6 +514,8 @@ ACTOR JumpingSkullNew : AetheriusMonsterZSC replaces JumpingSkull 3117
 ACTOR PossessedBalloonNew : AetheriusMonsterZSC replaces PossessedBalloon 3115
 {
 	Tag "Possessed Balloon"
+	AetheriusMonsterZSC.ActorFamily "Balloon"
+
 	Health 15
 	Radius 15
 	Height 40
@@ -631,6 +633,8 @@ ACTOR PossessedBalloonNew : AetheriusMonsterZSC replaces PossessedBalloon 3115
 ACTOR BigBerthaNew : AetheriusMonsterZSC replaces BigBertha 3225
 {
 	Tag "Big Bertha"
+	AetheriusMonsterZSC.ActorFamily "Balloon"
+
 	Scale 12
 	Health 6500
 	Radius 64

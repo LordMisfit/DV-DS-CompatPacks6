@@ -1134,6 +1134,7 @@ ACTOR PossessedBalloonNew : AetheriusMonsterZSC replaces PossessedBalloon 3115
 	//$Color 12
 	//$Category "Happy Time Circus/Monsters"
 	Tag "Possessed Balloon"
+	AetheriusMonsterZSC.ActorFamily "Balloon"
 
 	Health 15
 	Radius 15
@@ -2580,6 +2581,7 @@ actor ClownGhostNew : AetheriusMonsterZSC replaces ClownGhost 32128
 	//$Color 12
 	//$Category "Happy Time Circus/Monsters"
 	Tag "Clown Ghost Balloon"
+	AetheriusMonsterZSC.ActorFamily "Balloon"
 
 	Health 300 
 	Speed 5 
@@ -3630,6 +3632,7 @@ ACTOR BigBertha2New : AetheriusMonsterZSC replaces BigBertha2 3192
 	//$Color 12
 	//$Category "Happy Time Circus/Monsters"
 	Tag "Big Bertha"
+	AetheriusMonsterZSC.ActorFamily "Balloon"
 
 	Health 675 
 	Speed 6 
@@ -3933,6 +3936,7 @@ actor SuperBerthaNew : AetheriusMonsterZSC replaces SuperBertha 14768
 	//$Color 12
 	//$Category "Happy Time Circus/Monsters"
 	Tag "Super Bertha"
+	AetheriusMonsterZSC.ActorFamily "Balloon"
 	
 	Health 6000 
 	Speed 7 
