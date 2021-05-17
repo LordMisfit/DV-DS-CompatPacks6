@@ -13,7 +13,7 @@ ACTOR RapidFireTrooper : AetheriusMonsterZSC 3201
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 8.0
+	DamageFactor "Crush", 1.0 // 8.0
 	MONSTER 
 	+FLOORCLIP
 	DropItem Clip
@@ -150,7 +150,7 @@ actor UndeadHunter : AetheriusMonsterZSC 15489
 	Painchance "Fist", 105 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 175 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 105 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 8.0
+	DamageFactor "Crush", 1.0 // 8.0
 	activesound "shotguy/active" //if use in something else than doom, you have to provide theese sounds yourself.
 	attacksound "shotguy/attack"
 	painsound "undeadhunter/pain"
@@ -284,7 +284,7 @@ actor UndeadPriest : AetheriusMonsterZSC 15488
 	Painchance "Fist", 105 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 175 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 105 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 8.0
+	DamageFactor "Crush", 1.0 // 8.0
 	dropitem "Shell" 96
 	dropitem "Shell" 128
 	decal BulletChip
@@ -527,7 +527,7 @@ ACTOR NightmareNew : AetheriusMonsterZSC 26000
 	Painchance "Fist", 216 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 216 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 0
+	DamageFactor "Crush", 0.0 // 0.0
 	DamageFactor "Eldritch", 0.4
 	MONSTER 
 	+FLOORCLIP
@@ -687,7 +687,7 @@ actor SlimeWorm : AetheriusMonsterZSC 31994
 	Painchance "Fist", 135 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 225 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 135 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 5.6
+	DamageFactor "Crush", 0.7 // 5.6
 	speed 10
 	radius 20
 	height 56
@@ -830,7 +830,7 @@ Actor DemonWizard : AetheriusMonsterZSC 31997
 	Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	Monster
 	+FLOAT
 	+NOGRAVITY
@@ -1081,7 +1081,7 @@ ACTOR GlaakiSpawn : AetheriusMonsterZSC 3118
 	Radius 16
 	Height 29
 	Mass 4000
-	DamageFactor "Crush", 0
+	DamageFactor "Crush", 0.0 // 0.0
 	Monster
 	+FLOORCLIP +LOOKALLAROUND +NOTARGET +DONTTHRUST +NOPAIN
 	SeeSound "slgmsee"
@@ -1298,7 +1298,7 @@ ACTOR ShadowBeast : AetheriusMonsterZSC replaces BaronOfHell 30123
 	Painchance "Fist", 216 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 256 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 216 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	SEESOUND "shadowbeast/sight"
 	PAINSOUND "shadowbeast/pain"
 	DEATHSOUND "shadowbeast/death"
@@ -2163,7 +2163,7 @@ actor StarSpawn : AetheriusMonsterZSC replaces BaronofHell 11300
 	Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Eldritch", 150
 	DamageFactor "Eldritch", 2.5
-	DamageFactor "Crush", 0.025
+	DamageFactor "Crush", 0.003125 // 0.025
 	meleedamage 50
 	meleerange 64
 	seesound "deepone/sight"
@@ -2503,7 +2503,7 @@ actor VulgarNew : DSDoomImp 30127
 	Painchance "Fist", 180 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 180 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	MONSTER
 	+FLOORCLIP
 	+DONTHURTSPECIES
@@ -2690,7 +2690,7 @@ Actor Fleshspawn : AetheriusMonsterZSC 10558
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 9.6
+	DamageFactor "Crush", 1.2 // 9.6
 	DamageFactor "Fire", 1.5
 	Painchance "Fire", 255
 	DamageFactor "Holy", 2 // Demons = +200% Holy Damage
@@ -3136,7 +3136,7 @@ ACTOR Dhole : AetheriusMonsterZSC replaces Cyberdemon 9494
 	Height 110
 	Mass 10000
 	scale 2.0
-	DamageFactor "Crush", 1.2
+	DamageFactor "Crush", 0.15 // 1.2
 	Monster
 	+FLOORCLIP 
 	+LOOKALLAROUND 
@@ -3423,7 +3423,7 @@ Actor DShambler : AetheriusMonsterZSC 10077
 	Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	DamageFactor "Eldritch", 2.5
 	MeleeDamage 4
 	SeeSound "Shambler/Sight"
@@ -3657,7 +3657,7 @@ ACTOR SpiderGod : AetheriusMonsterZSC replaces SpiderMastermind 29999
 	Painchance "Fist", 15 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 25 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 15 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 0.2
+	DamageFactor "Crush", 0.025 // 0.2
 	Painchance "Eldritch", 30
 	DamageFactor "Eldritch", 2.5
 	Painchance "Sceptre", 30
@@ -4079,7 +4079,7 @@ ACTOR LengSpider : AetheriusMonsterZSC 19999
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	Painchance "Eldritch", 255
 	DamageFactor "Eldritch", 2.5
 	Obituary "%o was devoured by a Leng Spider."
@@ -4194,7 +4194,7 @@ Actor SpiderGodling : SpiderGod 29998
 	Painchance "Fist", 45 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 75 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 45 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	Painchance "Eldritch", 150
 	DamageFactor "Eldritch", 2.5
 	Dropitem LengSpiderling
@@ -4441,7 +4441,7 @@ Actor LengSpiderling : LengSpider 19998
 	Scale 0.5
 	Translation 2
 	Meleedamage 3
-	DamageFactor "Crush", 8.0
+	DamageFactor "Crush", 1.0 // 8.0
 	-NOTARGET
 	dropitem Backpack 2
 	dropitem Backpack 2
@@ -4496,7 +4496,7 @@ ACTOR StarVampire : AetheriusMonsterZSC 26001
 	Painchance "Fist", 216 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 216 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 5.6
+	DamageFactor "Crush", 0.7 // 5.6
 	MONSTER 
 	+STEALTH
 	+NOGRAVITY
@@ -4602,7 +4602,7 @@ actor Skeleton : AetheriusMonsterZSC 31995
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 8.0
+	DamageFactor "Crush", 1.0 // 8.0
 	speed 10
 	radius 24
 	height 56
@@ -4749,7 +4749,7 @@ actor PurpleTentacle : AetheriusMonsterZSC 31893
 	Painchance "Fist", 135 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 225 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 135 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 5.6
+	DamageFactor "Crush", 0.7 // 5.6
 	speed 10
 	radius 20
 	height 56
@@ -4860,7 +4860,7 @@ actor Nyarlathotep : AetheriusMonsterZSC 7801
 	Painchance "Eldritch", 255
 	Painchance "Holy", 255
 	Painchance "Sceptre", 255
-	DamageFactor "Crush", 2.0
+	DamageFactor "Crush", 0.25 // 2.0
 	DamageFactor "Eldritch", 2.5
 	DamageFactor "Holy", 5.0
 	DamageFactor "Sceptre", 5.0
@@ -5073,7 +5073,7 @@ ACTOR NyarlathotepLesser : Nyarlathotep 7802
 	Painchance "Eldritch", 255
 	Painchance "Holy", 255
 	Painchance "Sceptre", 255
-	DamageFactor "Crush", 2.0
+	DamageFactor "Crush", 0.25 // 2.0
 	DamageFactor "Eldritch", 2.5
 	DamageFactor "Holy", 5.0
 	DamageFactor "Sceptre", 5.0
@@ -5285,7 +5285,7 @@ ACTOR Spiderbaby : DSRailArachnotron replaces DSRailArachnotron
 	Height 64
 	Mass 300 // 600
 	Speed 10 // 12
-	DamageFactor "Crush", 5.2
+	Damagefactor "Crush", 0.65 // 5.2
 	DamageFactor "Fire", 0.75
 	DamageFactor "Thunder", 1.75
 	DamageFactor "Holy", 2 // Demons = +200% Holy Damage

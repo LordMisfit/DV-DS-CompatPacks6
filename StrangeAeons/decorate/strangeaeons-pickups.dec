@@ -601,7 +601,7 @@ ACTOR DualImpalerXBow : ImpalerXBow
 	}	
 }
 
-ACTOR SonicNail : MageWandMissileNew
+ACTOR SonicNail : SingleDamageFastRipper
 {
 	Tag "Impaler Bolt"
 	damage (finaldamagedealt) // 3

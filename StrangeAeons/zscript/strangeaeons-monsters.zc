@@ -297,7 +297,7 @@ class Devil : AetheriusMonsterZSC
 		height 56;
 		mass 120;
 		speed 10;
-		DamageFactor "Crush", 6.4;
+		DamageFactor "Crush", 0.8; // 6.4
 		DamageFactor "Fire", 0.5; // Imps = -50% Fire Damage
 		Painchance "Fire", 80; // Imps = -50% Pain Chance
 		DamageFactor "Holy", 1.5; // Imps = +50% Holy Damage
