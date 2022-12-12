@@ -1177,7 +1177,7 @@ Actor SoulFragment
 	Projectile
 	+DontSplash
 	+NoClip
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.15
 	Scale 0.7
 	States
@@ -1202,7 +1202,7 @@ Actor SoulFragmentTrail
 	Projectile
 	+DontSplash
 	+NoClip
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.15
 	Scale 0.7
 	States

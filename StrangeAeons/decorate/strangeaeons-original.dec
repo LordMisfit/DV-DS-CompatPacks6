@@ -115,7 +115,7 @@ actor ElectroBlast : FastProjectile
 	Scale 0.75
 	+RANDOMIZE
 	+BLOODLESSIMPACT
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.75
 	SeeSound "electrogun/shoot"
 	DeathSound "electrogun/hit"
@@ -140,7 +140,7 @@ actor ElectroBlastTrail
 	Damage 1
 	Projectile
 	+RANDOMIZE
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.75
 	States
 	{

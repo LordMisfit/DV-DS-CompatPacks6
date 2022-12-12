@@ -241,7 +241,7 @@ projectile Rain3
 	Scale 0.75 
 	ALPHA 0.8
 	RenderStyle STYLE_Translucent
-	// RENDERSTYLE ADD
+	// RenderStyle "Add"
 	Speed 0
 	Damage 0
 	NoBlockmap
@@ -832,7 +832,7 @@ ACTOR TinyBingo : Bingo //4179
 actor RevTrail
 {
     PROJECTILE
-    RENDERSTYLE ADD
+    RenderStyle "Add"
     +NOCLIP
     Scale 0.5
     ALPHA 0.4
@@ -849,7 +849,7 @@ actor RFlame
 	+NOCLIP
 	Speed 0
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.4
 	Scale 0.8
 	SeeSound ""
@@ -2396,7 +2396,7 @@ actor Web2 20013
 	Height 20
 	+SpawnCEILING 
 	+NOGRAVITY
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.35
 	Mass 5
 	States
@@ -2410,7 +2410,7 @@ actor Web3 20001
 {
 	Radius 8
 	Height 20
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.35
 	+SpawnCEILING 
 	+NOGRAVITY
@@ -3079,7 +3079,7 @@ actor SteamVent2 4113
 actor cloud
 {
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	+NOCLIP
 	Scale 1.0
 	ALPHA 0.8
@@ -3094,7 +3094,7 @@ actor cloud
 actor cloud1
 {
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	+NOCLIP
 	Scale 1.0
 	ALPHA 0.8
@@ -3109,7 +3109,7 @@ actor cloud1
 
 actor cloud2 : cloud1
 {
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.7
 	States
 	{
@@ -3122,7 +3122,7 @@ actor cloud2 : cloud1
 
 actor cloud3 : cloud1
 {
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.5
 	States
 	{
@@ -3135,7 +3135,7 @@ actor cloud3 : cloud1
 
 actor cloud4 : cloud1
 {
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.2
 	States
 	{
@@ -3147,7 +3147,7 @@ actor cloud4 : cloud1
 actor big1
 {
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	+NOCLIP
 	Scale 1.5
 	ALPHA 0.8
@@ -3244,7 +3244,7 @@ actor BSplatter
 actor bsmoke
 {
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	+NOCLIP
 	Scale 1.0
 	ALPHA 0.4
@@ -3461,7 +3461,7 @@ actor Soul1
 	scale 0.8
 	+FloatBob 
 	PROJECTILE
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	ALPHA 0.60
 	States
 	{
@@ -3478,7 +3478,7 @@ actor Soul1
 actor Soul2 : Soul1
 {
 	PROJECTILE
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	ALPHA 0.8
 	scale 1.3
 	States
@@ -3496,7 +3496,7 @@ actor Soul2 : Soul1
 actor Soul3 : Soul1
 {
 	PROJECTILE
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	ALPHA 0.6
 	scale 1
 	States
@@ -3514,7 +3514,7 @@ actor Soul3 : Soul1
 actor Soul4 : Soul1
 {
 	PROJECTILE
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	ALPHA 0.6
 	scale 1
 	States
@@ -3532,7 +3532,7 @@ actor Soul4 : Soul1
 actor  BunnySoul : TeleSprite 1368
 {        
 	+RANDOMIZE
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	Scale 0.6
 	ALPHA 0.8
 	States
@@ -5029,7 +5029,7 @@ actor MegaClownSoul : ClownSouls 30206
 }
 ACTOR ClownSpark
 {   
-	renderstyle add
+	RenderStyle "Add"
 	Radius 5
 	Height 5
 	Speed 5
@@ -5431,7 +5431,7 @@ actor PennySeeker
 	Scale 1
 	+SeeKERMISSILE
 	PROJECTILE
-	//RENDERSTYLE ADD
+	//RenderStyle "Add"
 	//ALPHA 0.67
 	SeeSound ""
 	DeathSound "CBLAST2"

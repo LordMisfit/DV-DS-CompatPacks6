@@ -28,7 +28,7 @@ Actor BaseStar
 	-Solid
 	Radius 0
 	Height 0
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.01
 	Scale 0.20
 	States
@@ -183,7 +183,7 @@ actor MiniFirePuff : AetheriusProjectileZSC
 	ProjectileKickback 0
 	+NODAMAGETHRUST
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	States
 	{
@@ -325,7 +325,7 @@ actor YellowSkullSeeker : AetheriusProjectileZSC
 	Speed 9
 	+SEEKERMISSILE
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	scale 0.67
 	ALPHA 0.67
 	DeathSound "implord/shieldshothit"
@@ -366,7 +366,7 @@ actor GreenPoisonBall : AetheriusEffectProjectile
 	Height 6
 	Speed 10
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	DeathSound "imp/shotx"
 	States
@@ -456,7 +456,7 @@ actor RedSkullBall : AetheriusProjectileZSC
 	Height 6
 	Speed 15
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	SeeSound "imp/attack"
 	DeathSound "imp/shotx"
@@ -1193,7 +1193,7 @@ actor ShadowTrail
 	Height 1
 	Speed 0
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.6
 	+NOCLIP
 	States
@@ -1274,7 +1274,7 @@ actor SoulHarvesterBall : AetheriusProjectileZSC
 	Damage (2 * random(1,8))
 	+SEEKERMISSILE
 	PROJECTILE
-	Renderstyle ADD
+	RenderStyle "Add"
 	SeeSound "harvester/scream"
 	DeathSound "imp/shotx"
 	Decal DoomImpScorch
@@ -1315,7 +1315,7 @@ actor SoulHarvesterGhost
 	Height 1
 	Speed 0
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.7
 	+NOCLIP
 	SeeSound "harvester/ghost"
@@ -1336,7 +1336,7 @@ actor SoulBallTrail
 	Height 1
 	Speed 0
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.5
 	+NOCLIP
 	States
@@ -1417,7 +1417,7 @@ ACTOR ThrallShot1 : AetheriusProjectileZSC
 	Radius 4
 	Height 6
 	Speed 14
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	Alpha 0.67
 	PROJECTILE
 	DEATHSOUND "monster/disht1"
@@ -1560,7 +1560,7 @@ ACTOR AcolyteShot : AetheriusProjectileZSC
 	Radius 8
 	Height 16
 	Speed 10
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	PROJECTILE
 	+SEEKERMISSILE
@@ -1777,7 +1777,7 @@ ACTOR DiscipleShot1 : AetheriusProjectileZSC
 	Radius 8
 	Height 16
 	Speed 15
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	PROJECTILE
 	DeathSound "monster/disht1"
@@ -1819,7 +1819,7 @@ ACTOR DiscipleShot2 : AetheriusProjectileZSC
 	Radius 8
 	Height 16
 	Speed 15
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	PROJECTILE
 	+SEEKERMISSILE
@@ -1863,7 +1863,7 @@ ACTOR DSFX1
 	Height 2
 	Speed 0
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	States
 	{
@@ -1880,7 +1880,7 @@ ACTOR DSFX2
 	Height 2
 	Speed 0
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	States
 	{
@@ -1967,7 +1967,7 @@ ACTOR VulgarShot : AetheriusProjectileZSC
 	Speed 10
 	Damage 4
 	PoisonDamage 32
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	PROJECTILE
 	Seesound "poly/stmdr1"
@@ -1988,7 +1988,7 @@ ACTOR Barbtrail
 	Radius 0
 	Height 1
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.75
 	States
 	{
@@ -2076,7 +2076,7 @@ ACTOR WickedShot : AetheriusProjectileZSC
 	Radius 8
 	Height 8
 	Speed 10
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	DamageType "Fire"
 	ALPHA 0.67
 	PROJECTILE
@@ -2156,7 +2156,7 @@ ACTOR WickedFX
 	+NOGRAVITY
 	+DONTSPLASH
 	+FORCEXYBILLBOARD
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	States
 	{
@@ -2748,7 +2748,7 @@ ACTOR AvaFireBall : AetheriusProjectileZSC
 	ExplosionDamage 8
 	ExplosionRadius 32
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.80
 	SeeSound "weapons/bwoosh"
 	DeathSound "weapons/firex2"
@@ -2790,7 +2790,7 @@ ACTOR AvaBall1 : AetheriusProjectileZSC
 	Height 40
 	Speed 12
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.80
 	SeeSound "weapons/gntini"
 	DeathSound "weapons/devexp"
@@ -2856,7 +2856,7 @@ ACTOR AvaBall2 : AetheriusProjectileZSC
 	ExplosionDamage 64
 	ExplosionRadius 32
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.75
 	DamageType "Avatar"
 	DeathSound "weapons/devzap"
@@ -2918,7 +2918,7 @@ ACTOR AvaBall3 : AetheriusProjectileZSC
 	ExplosionDamage 24
 	ExplosionRadius 16
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.75
 	DamageType "Avatar"
 	DeathSound "weapons/gnthit"
@@ -2979,7 +2979,7 @@ ACTOR AvaBall4 : AetheriusProjectileZSC
 	ExplosionDamage 8
 	ExplosionRadius 8
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.75
 	DamageType "Avatar"
 	DeathSound "monster/hadsit"
@@ -3021,7 +3021,7 @@ ACTOR HolyMissile2 : AetheriusProjectileZSC
 	Damage 16
 	PROJECTILE
 	+SEEKERMISSILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	ALPHA 0.67
 	MissileType HolyMissileTrail
 	SeeSound "monster/bomb"
@@ -3060,7 +3060,7 @@ ACTOR HolyMissileTrail
 	Height 3
 	Speed 15
 	PROJECTILE
-	RENDERSTYLE ADD
+	RenderStyle "Add"
 	Alpha 0.67
 	+FireDamage
 	states
@@ -3092,6 +3092,7 @@ actor asdfMarker : MapMarker 24570
 
 ACTOR PuzzGearWheel : BasicArmorBonus 9018
 {
+	+NOTIMEFREEZE
 	Radius 20
 	Height 16
 	Inventory.Pickupmessage "YOU GOT A GEARWHEEL." // "Picked up an armor bonus."
@@ -3306,7 +3307,7 @@ ACTOR DCBMiss1 : AetheriusProjectileZSC
 	DamageType "BFG"
 	+SeekerMissile
 	+ExtremeDeath
-	Renderstyle Add
+	RenderStyle "Add"
 	SEESOUND "q2weapon/bfgball"
 	DEATHSOUND "q2weapon/bfgballexplo"
 	Decal BFGLightning
@@ -3353,7 +3354,7 @@ ACTOR DCBM1Trail
 	Scale 0.8
 	+Noclip
 	PROJECTILE
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	Alpha 0.6
 	states
 	{
@@ -3372,7 +3373,7 @@ ACTOR DCBMiss2 : AetheriusProjectileZSC
 	Height 8
 	Health 5
 	Speed 28
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	PROJECTILE
 	Translation "160:167=120:127", "208:223=120:127"
 	SEESOUND "q2weapon/rocketlauncherfire"
@@ -3414,7 +3415,7 @@ ACTOR DCBMiss3
 	Health 5
 	Speed 8
 	Scale 2
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	+BloodLessImpact
 	+Ripper
 	+DontSplash
@@ -3462,7 +3463,7 @@ ACTOR DCBMiss3M : AetheriusProjectileZSC
 	Speed 28
 	Scale 1.3
 	+FloorHugger
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	PROJECTILE
 	DEATHSOUND "comet/explosion"
 	Decal RevenantScorch
@@ -3488,7 +3489,7 @@ ACTOR DCBMiss3MCrisis : DCBMiss3M
 	Speed 28
 	Scale 1.3
 	+FloorHugger
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	PROJECTILE
 	DEATHSOUND "comet/explosion"
 	Decal RevenantScorch
@@ -3517,7 +3518,7 @@ ACTOR DCBMiss3MG : AetheriusProjectileZSC
 	Scale 0.8
 	+Noclip
 	PROJECTILE
-	RENDERSTYLE Add
+	RenderStyle "Add"
 	Alpha 0.6
 	states
 	{

@@ -30,23 +30,3 @@ map MAP33 "Super Ultra Insanity Test Level"
  aircontrol = 1.0
  music = ENDMUSIC
 }
-/*
-cluster 1
-{
- music = "D_TENSE"
- flat = "BKACH94"
- exittext =
- "It is over.",
- "",
- "What's left is an abandoned and desolate",
- "city in the silence of the dark night.",
- "",
- "Thamuz is dead and only his green and",
- "gloomy remains witness his short visit",
- "in our world.",
- "",
- "With killing the arch-demon you also",
- "banished his minions back to were they",
- "came from."
-}
-*/
