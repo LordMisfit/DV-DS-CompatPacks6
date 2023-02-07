@@ -1,0 +1,85 @@
+[default]
+// Circus2 Footsteps
+// Language Definitions
+
+// This is where the footstep sounds for each texture are defined.
+// The definition MUST be STEP_<texturename>
+
+// Flats
+// This is a list of flats that have footstep sounds associated with them.
+// Items are separated by a colon ( : )
+// If a flat/texture is not present in this list, then only the default sound will be
+// played when it is walked on.
+STEP_FLATSCIRCUS2 = "ABETTEP1:ABETTEP2:ABLACK:ABLUE:ABLUE2:"
+										"ABLUE3:ABRICK:ABRICK2:ABROWN2:ACABWOOD:ACARDB:ACARPET:"
+										"ACARPET2:ACHECKER:AGORE:AGORE4:AGRASS8:AGREEN:AHOLES:AMETAL:AMUD:"
+										"APALE:APANEL:APARKING:APAVE:APAVE2:APIC1:APIC2:APINK:APUKE2:"
+										"APURPLE:APURPLE2:ASHING1:ASHING2:ASKYBLUE:ASOUP:ASTRIPE:ASWIRL:"
+										"ATAN:ATILE:ATILE2:AWALPAPR:AWDFLR2:AWOOD:AWOOD3:"
+										"AWOOD333:AWOOD7:AWOODPOL:AYELLOW:AYELLDOT:CRACKLE2:CRACKLE4:"
+										"PEEKABOO:SKSNAKE1:SKSNAKE2:STRIPS:TA1:";
+
+// Sounds
+STEP_ABETTEP1 = "step/carpet";
+STEP_ABETTEP2 = "step/carpet";
+STEP_ABLACK = "null";
+STEP_ABLUE = "step/hard";
+STEP_ABLUE2 = "step/hard";
+
+STEP_ABLUE3 = "step/hard";
+STEP_ABRICK = "step/hard";
+STEP_ABRICK2 = "step/hard";
+STEP_ABROWN2 = "step/hard";
+STEP_ACABWOOD = "step/wood";
+STEP_ACARDB = "step/hard";
+STEP_ACARPET = "step/carpet";
+
+STEP_ACARPET2 = "step/carpet";
+STEP_ACHECKER = "step/tile/a";
+STEP_AGORE = "step/slimy";
+STEP_AGORE4 = "step/slimy";
+STEP_AGRASS8 = "step/grass";
+STEP_AGREEN = "step/hard";
+STEP_AHOLES = "step/metal/b";
+STEP_AMETAL = "step/metal/a";
+STEP_AMUD = "step/slimy";
+
+STEP_APALE = "step/hard";
+STEP_APANEL = "step/hard";
+STEP_APARKING = "step/hard";
+STEP_APAVE = "step/hard";
+STEP_APAVE2 = "step/hard";
+STEP_APIC1 = "step/slimy";
+STEP_APIC2 = "step/slimy";
+STEP_APINK = "step/hard";
+STEP_APUKE2 = "null";
+
+STEP_APURPLE = "step/hard";
+STEP_APURPLE2 = "step/hard";
+STEP_ASHING1 = "step/hard";
+STEP_ASHING2 = "step/hard";
+STEP_ASKYBLUE = "null";
+STEP_ASOUP = "step/water";
+STEP_ASTRIPE = "step/hard";
+STEP_ASWIRL = "step/hard";
+
+STEP_ATAN = "step/hard";
+STEP_ATILE = "step/tile/a";
+STEP_ATILE2 = "step/tile/b";
+STEP_AWALPAPR = "step/carpet";
+STEP_AWDFLR2 = "step/wood";
+STEP_AWOOD = "step/wood";
+STEP_AWOOD3 = "step/wood";
+
+STEP_AWOOD333 = "step/wood";
+STEP_AWOOD7 = "step/wood";
+STEP_AWOODPOL = "step/wood";
+STEP_AYELLOW = "step/hard";
+STEP_AYELLDOT = "step/carpet";
+STEP_CRACKLE2 = "step/rock";
+STEP_CRACKLE4 = "step/rock";
+STEP_PEEKABOO = "step/rock";
+STEP_SKSNAKE1 = "step/slimy";
+STEP_SKSNAKE2 = "step/slimy";
+STEP_STRIPS = "step/carpet";
+STEP_TA1 = "step/rock";

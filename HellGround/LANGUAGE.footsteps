@@ -1,0 +1,265 @@
+[default]
+// Hell Ground Footsteps
+// Language Definitions
+
+// This is where the footstep sounds for each texture are defined.
+// The definition MUST be STEP_<texturename>
+
+// Flats
+// This is a list of flats that have footstep sounds associated with them.
+// Items are separated by a colon ( : )
+// If a flat/texture is not present in this list, then only the default sound will be
+// played when it is walked on.
+STEP_FLATSHELLG = "BLACK1:BLACK2:BLACK3:BLACK4:BLACK5:BLACK6:BLK_STN:"
+									"EDPLAT:ERPLAT:"
+									"FB:"
+									"FLT01:FLT02:FLT03:FLT04:FLT05:FLT06:FLT07:FLT08:FLT09:FLT10:"
+									"FLT11:FLT12:FLT13:FLT14:FLT15:FLT16:FLT17:FLT18:FLT19:FLT20:"
+									"FLT21:FLT22:FLT23:FLT24:FLT25:FLT26:FLT27:FLT28:FLT29:FLT30:"
+									"FLT31:FLT32:FLT33:FLT34:FLT35:FLT36:FLT37:FLT38:FLT39:FLT40:"
+									"FLT41:FLT42:FLT43:FLT44:FLT45:FLT46:FLT47:FLT48:FLT49:FLT50:"
+									"FLT51:FLT52:FLT53:FLT54:FLT55:FLT56:FLT57:FLT58:FLT59:FLT60:"
+									"FLT61:FLT62:"
+									"FMETAL0:FMETAL1:FMETAL2:FMETAL3:FMETAL4:FMETAL5:FMETAL6:FMETAL7:FMETAL8:"
+									"FW:"
+									"FPORT01:FPORT02:FPORT03:FPORT04:"
+									"GFLAT1:GFLAT2:GFLAT3:GFLAT4:"
+									"GRASS1:"
+									"GREEN1:GREEN2:GREEN3:GREEN4:GREEN5:GREEN6:"
+									"GRN_STN:GRNROCK:"
+									"GRS64:GRS64_2:GRS64_3:GRS64_4:GRS64_5:"
+									"GT1:GT2:GT3:GT4:GT5:GT6:"
+									"HDEM1:HDEM2:HDEM3:HDEM4:"
+									"HPEN1:HPEN2:HPEN3:HPEN4:"
+									"HSYM1:HSYM2:HSYM3:HSYM4:"
+									"LAV01:LAV02:LAV03:LAV04:LAV05:LAV06:LAV07:LAV08:"
+									"LIGHTS1:LIGHTS2:LIGHTS3:LIGHTS4:LIGHTS5:"
+									"NFWOOD01:NFWOOD02:NFWOOD03:NFWOOD04:NFWOOD05:NFWOOD06:NFWOOD07:NFWOOD08:NFWOOD09:"
+									"ORNGRAYF:"
+									"PENT1:PENT2:PENT3:PENT4:PENT1:PENT64:PENT128:PENT192:PENT264:PENT364:PENT464:PENT2128:PENT2192:PENT3128:PENT3192:PENT4128:PENT4192:"
+									"PORT01:PORT02:PORT03:PORT04:"
+									"ROAD:ROSE1:ROSE2:ROSE3:ROSE4:ROSE5:ROSE6:"
+									"RUINB_01:RUINB_02:RUINB_03:RUINB_04:RUINB_05:RUINB_06:RUINB_07:RUINB_08:RUINB_09:RUINB_10:"
+									"RUINB_11:RUINB_12:RUINB_13:RUINB_14:RUINB_15:RUINB_16:";
+
+// Sounds
+STEP_BLACK1 = "step/slime";
+STEP_BLACK2 = "step/slime";
+STEP_BLACK3 = "step/slime";
+STEP_BLACK4 = "step/slime";
+STEP_BLACK5 = "step/slime";
+STEP_BLACK6 = "step/slime";
+STEP_BLK_STN = "step/rock";
+
+STEP_EDPLAT = "step/tile/a";
+STEP_ERPLAT = "step/tile/a";
+
+STEP_FB = "null";
+
+STEP_FLT01 = "step/hard";
+STEP_FLT02 = "step/metal/a";
+STEP_FLT03 = "step/metal/b";
+STEP_FLT04 = "step/hard";
+STEP_FLT05 = "step/hard";
+STEP_FLT06 = "step/metal/a";
+STEP_FLT07 = "step/hard";
+STEP_FLT08 = "step/wood";
+STEP_FLT09 = "step/tile/a";
+STEP_FLT10 = "step/hard";
+
+STEP_FLT11 = "step/metal/b";
+STEP_FLT12 = "step/metal/b";
+STEP_FLT13 = "step/metal/b";
+STEP_FLT14 = "step/metal/b";
+STEP_FLT15 = "step/metal/a";
+STEP_FLT16 = "step/tile/b";
+STEP_FLT17 = "step/tile/b";
+STEP_FLT18 = "step/tile/b";
+STEP_FLT19 = "step/rock";
+STEP_FLT20 = "step/wood";
+
+STEP_FLT21 = "step/carpet";
+STEP_FLT22 = "step/carpet";
+STEP_FLT23 = "step/carpet";
+STEP_FLT24 = "step/wood";
+STEP_FLT25 = "step/wood";
+STEP_FLT26 = "step/hard";
+STEP_FLT27 = "step/metal/b";
+STEP_FLT28 = "step/hard";
+STEP_FLT29 = "step/hard";
+STEP_FLT30 = "step/wood";
+
+STEP_FLT31 = "step/hard";
+STEP_FLT32 = "step/lava";
+STEP_FLT33 = "step/metal/b";
+STEP_FLT34 = "step/metal/a";
+STEP_FLT35 = "step/metal/a";
+STEP_FLT36 = "step/slimy";
+STEP_FLT37 = "step/gravel";
+STEP_FLT38 = "step/rock";
+STEP_FLT39 = "step/metal/b";
+STEP_FLT40 = "step/metal/b";
+
+STEP_FLT41 = "step/metal/b";
+STEP_FLT42 = "step/hard";
+STEP_FLT43 = "step/hard";
+STEP_FLT44 = "step/metal/b";
+STEP_FLT45 = "step/hard";
+STEP_FLT46 = "step/slimy";
+STEP_FLT47 = "step/carpet";
+STEP_FLT48 = "step/hard";
+STEP_FLT49 = "step/hard";
+STEP_FLT50 = "step/slimy";
+
+STEP_FLT51 = "step/slimy";
+STEP_FLT52 = "step/slimy";
+STEP_FLT53 = "step/slimy";
+STEP_FLT54 = "step/hard";
+STEP_FLT55 = "step/slimy";
+STEP_FLT56 = "step/slimy";
+STEP_FLT57 = "step/hard";
+STEP_FLT58 = "step/hard";
+STEP_FLT59 = "step/metal/b";
+STEP_FLT60 = "step/metal/b";
+
+STEP_FLT61 = "step/metal/b";
+STEP_FLT62 = "step/slimy";
+
+STEP_FMETAL0 = "step/metal/a";
+STEP_FMETAL1 = "step/metal/a";
+STEP_FMETAL2 = "step/metal/a";
+STEP_FMETAL3 = "step/metal/a";
+STEP_FMETAL4 = "step/metal/a";
+STEP_FMETAL5 = "step/metal/b";
+STEP_FMETAL6 = "step/metal/b";
+STEP_FMETAL7 = "step/metal/b";
+STEP_FMETAL8 = "step/metal/b";
+
+STEP_FPORT01 = "step/water";
+STEP_FPORT02 = "step/water";
+STEP_FPORT03 = "step/water";
+STEP_FPORT04 = "step/water";
+
+STEP_GRS64 = "step/grass";
+STEP_GRS64_2 = "step/dirt";
+STEP_GRS64_3 = "step/dirt";
+STEP_GRS64_4 = "step/dirt";
+STEP_GRS64_5 = "step/dirt";
+
+STEP_FW = "null";
+
+STEP_GFLAT1 = "step/rock";
+STEP_GFLAT2 = "step/rock";
+STEP_GFLAT3 = "step/rock";
+STEP_GFLAT4 = "step/rock";
+
+STEP_GRASS1 = "step/grass";
+
+STEP_GREEN1 = "step/slimy";
+STEP_GREEN2 = "step/slimy";
+STEP_GREEN3 = "step/slimy";
+STEP_GREEN4 = "step/slimy";
+STEP_GREEN5 = "step/slimy";
+STEP_GREEN6 = "step/slimy";
+
+STEP_GRN_STN = "step/rock";
+STEP_GRNROCK = "step/wood";
+
+STEP_GT1 = "step/slimy";
+STEP_GT2 = "step/slimy";
+STEP_GT3 = "step/slimy";
+STEP_GT4 = "step/slimy";
+STEP_GT5 = "step/slimy";
+STEP_GT6 = "step/slimy";
+
+STEP_HDEM1 = "step/hard";
+STEP_HDEM2 = "step/hard";
+STEP_HDEM3 = "step/hard";
+STEP_HDEM4 = "step/hard";
+
+STEP_HPEN1 = "step/lava";
+STEP_HPEN2 = "step/lava";
+STEP_HPEN3 = "step/lava";
+STEP_HPEN4 = "step/lava";
+
+STEP_HSYM1 = "step/hard";
+STEP_HSYM2 = "step/hard";
+STEP_HSYM3 = "step/hard";
+STEP_HSYM4 = "step/hard";
+
+STEP_LAV01 = "step/lava";
+STEP_LAV02 = "step/lava";
+STEP_LAV03 = "step/lava";
+STEP_LAV04 = "step/lava";
+STEP_LAV05 = "step/lava";
+STEP_LAV06 = "step/lava";
+STEP_LAV07 = "step/lava";
+STEP_LAV08 = "step/lava";
+
+STEP_LIGHTS1 = "step/metal/a";
+STEP_LIGHTS2 = "step/metal/a";
+STEP_LIGHTS3 = "step/metal/a";
+STEP_LIGHTS4 = "step/metal/a";
+STEP_LIGHTS5 = "step/metal/a";
+
+STEP_NFWOOD01 = "step/wood";
+STEP_NFWOOD02 = "step/wood";
+STEP_NFWOOD03 = "step/wood";
+STEP_NFWOOD04 = "step/wood";
+STEP_NFWOOD05 = "step/wood";
+STEP_NFWOOD06 = "step/rock";
+STEP_NFWOOD07 = "step/rock";
+STEP_NFWOOD08 = "step/rock";
+STEP_NFWOOD09 = "step/rock";
+
+STEP_ORNGRAYF = "step/rock";
+
+STEP_PENT1 = "step/lava";
+STEP_PENT2 = "step/lava";
+STEP_PENT3 = "step/lava";
+STEP_PENT4 = "step/lava";
+STEP_PENT64 = "step/lava";
+STEP_PENT128 = "step/lava";
+STEP_PENT192 = "step/lava";
+STEP_PENT264 = "step/lava";
+STEP_PENT364 = "step/lava";
+STEP_PENT464 = "step/lava";
+STEP_PENT2128 = "step/lava";
+STEP_PENT2192 = "step/lava";
+STEP_PENT3128 = "step/lava";
+STEP_PENT3192 = "step/lava";
+STEP_PENT4128 = "step/lava";
+STEP_PENT4192 = "step/lava";
+
+STEP_PORT01 = "step/water";
+STEP_PORT02 = "step/water";
+STEP_PORT03 = "step/water";
+STEP_PORT04 = "step/water";
+
+STEP_ROAD = "step/dirt";
+
+STEP_ROSE1 = "step/slimy";
+STEP_ROSE2 = "step/slimy";
+STEP_ROSE3 = "step/slimy";
+STEP_ROSE4 = "step/slimy";
+STEP_ROSE5 = "step/slimy";
+STEP_ROSE6 = "step/slimy";
+
+STEP_RUINB_01 = "step/rock";
+STEP_RUINB_02 = "step/rock";
+STEP_RUINB_03 = "step/rock";
+STEP_RUINB_04 = "step/rock";
+STEP_RUINB_05 = "step/rock";
+STEP_RUINB_06 = "step/rock";
+STEP_RUINB_07 = "step/rock";
+STEP_RUINB_08 = "step/rock";
+STEP_RUINB_09 = "step/rock";
+STEP_RUINB_10 = "step/rock";
+STEP_RUINB_11 = "step/rock";
+STEP_RUINB_12 = "step/rock";
+STEP_RUINB_13 = "step/rock";
+STEP_RUINB_14 = "step/rock";
+STEP_RUINB_15 = "step/rock";
+STEP_RUINB_16 = "step/rock";
+
+STEP_SLIME_16 = "step/metal/b";
